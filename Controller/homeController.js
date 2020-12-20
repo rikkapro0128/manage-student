@@ -28,6 +28,7 @@ class homeController {
             .then((users) => {
                 return users;
             })
+            // test conflict
             .then((data) => {
                 res.json({
                     message: 'show count!',
