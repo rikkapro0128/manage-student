@@ -26,7 +26,8 @@ class homeController {
     async showAccount(req, res, next) {
         await accountStudent.find({})
             .then((users) => {
-                return users;
+                return users;   
+                // this is change
             })
             .then((data) => {
                 res.json({
