@@ -1,7 +1,5 @@
 const accountStudent = require('../modelsController/accountStudent');
-const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
-const cookie = require('cookie');
 const joi = require('joi');
 const handleError = require('../middleware/handleEnrror');
 const handle = require('../middleware/handleToken');
@@ -31,10 +29,12 @@ class authentication {
                 }) : checked;
             }).then((value) => { // create token then response to client
                 if(!value) { throw new Error('User Name or Password Invalid!'); }
-                const access_token = handle.generatorToken({ data: value.username });
-                res.setHeader('access_token', 'Authorzation ' + access_token);
-                res.redirect('/');
+                const access_token = handle.generatorToken({ id: value._id });
+                res.setHeader('access_token', `${access_token}`);
+                // res.json({ token: access_token }).status(200);
+                // res.redirect('/');
             })
+            next();
         } catch (error) {
             next(error);
         }
@@ -55,12 +55,21 @@ class authentication {
             }).then(async(value) => { // return value was entered by user
                 return value;
             }).then(async(value) => { // save account user created
+                let data;
                 await new accountStudent({
                     userName: value.userName,
                     hashPassword: value.password,
                     // ^^ two field is require when you want save database
-                }).save();
-                res.redirect('/');
+                }).save().then(async(userStoraged) => {
+                    data = userStoraged;
+                })
+                return data;
+            }).then((value) => { // create token then response to client
+                if(!value) { throw new Error('User Name or Password Invalid!'); }
+                const access_token = handle.generatorToken({ id: value._id });
+                res.setHeader('access_token', `${access_token}`);
+                // res.json({ token: access_token }).status(200);
+                // res.redirect('/');
             })
             next();
         } catch (error) {

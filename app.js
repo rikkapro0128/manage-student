@@ -5,14 +5,12 @@ const mongoose  = require('mongoose');
 const handlebars = require('express-handlebars');
 const bodyPaser = require('body-parser');
 const morgan = require('morgan');
-const cookieParser = require('cookie-parser');
 const app = express();
 const routerController = require('./Router/routerContoller');
 const connectDb = require('./Database/connectDb');
 const handleError = require('./middleware/handleEnrror');
 const port = 3000;
 
-app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({extended: true}));
 app.use(bodyPaser.json());

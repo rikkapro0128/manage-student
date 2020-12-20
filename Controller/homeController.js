@@ -1,7 +1,5 @@
 const accountStudent = require('../modelsController/accountStudent');
-const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
-const cookie = require('cookie');
 
 class homeController {
 
@@ -23,6 +21,20 @@ class homeController {
 
     register(req, res, next) {
         res.render('register');
+    }
+
+    async showAccount(req, res, next) {
+        await accountStudent.find({})
+            .then((users) => {
+                return users;
+            })
+            .then((data) => {
+                res.json({
+                    message: 'show count!',
+                    user: data,
+                })
+            })
+        next();
     }
 
 }
