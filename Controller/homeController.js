@@ -28,6 +28,7 @@ class homeController {
             .then((users) => {
                 return users;   
                 // this is change in thirds
+                // this is my comment
             })
             .then((data) => {
                 res.json({
