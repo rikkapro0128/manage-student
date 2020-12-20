@@ -27,9 +27,6 @@ class homeController {
         await accountStudent.find({})
             .then((users) => {
                 return users;   
-                // this is change in thirds
-                // this is my comment
-                // test conflict
             })
             .then((data) => {
                 res.json({
