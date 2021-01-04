@@ -6,6 +6,10 @@ class homeController {
     pageNotFound(req, res, next) {
         res.render('pageNotFound');
     }
+    
+    authGoogle(req, res, next) {
+        res.redirect('/');
+    }
 
     mainInterface(req, res, next) {
         res.send('This view main home!');
