@@ -1,20 +1,38 @@
 <form action="/action-register" method="POST">
-    <div class="container__register">
-        <div class="register__box-top">
-            <div class="register__box-top--username">
-                <input type="text" name="username" placeholder="Please fill to user name">
-            </div>
-            <div class="register__box-top--password">
-                <input type="text" name="password" placeholder="Please fill to your password">
-            </div>
-            <div class="register__box-top--confirm-password">
-                <input type="text" name="confirm_password" placeholder="Please fill to your password again">
-            </div>
-        </div>
-        <div class="register__box-bottom">
-            <div class="register__box-submit-login">
-                <button type="submit">Register</button>
-            </div>
-        </div>
+  <div class="box__login">
+
+    <h1 class="box__login--title m-15 no_highlight">Sign Up</h1>
+
+    <div class="box__login--username d-flex flex-d m-15">
+      <!-- icon here -->
+      <span class="username__title no_highlight">User Name</span>
+      <div class="boder__radius">
+        <i class="fas fa-user boder__radius--position"></i>
+      </div>
+      <input class="input__style" placeholder="Eg: username0123" type="text" name="username">
     </div>
+
+    <div class="box_login--password d-flex flex-d m-15">
+      <!-- icon here -->
+      <span class="username__title no_highlight">Password</span>
+      <div class="boder__radius">
+        <i class="fas fa-lock boder__radius--position"></i>
+      </div>
+      <input class="input__style" placeholder="Eg: 0123456789" type="password" name="password">
+    </div>
+
+    <div class="box_login--password d-flex flex-d m-15">
+      <!-- icon here -->
+      <span class="username__title no_highlight">Confirm Password</span>
+      <div class="boder__radius">
+        <i class="fas fa-lock boder__radius--position"></i>
+      </div>
+      <input class="input__style" placeholder="Eg: 0123456789" type="password" name="confirm_password">
+    </div>
+
+    <button class="btn btn-green btn-shadow-green d-flex d-j-around m-15">
+      <h1 class="box__login--content">Register</h1>
+    </button>
+
+  </div>
 </form>

@@ -1,17 +1,43 @@
-<form action="action-login" method="POST">
-    <div class="container__login">
-        <div class="login__box-top">
-            <div class="login__box-top--username">
-                <input type="text" name="username" placeholder="Please fill to user name">
-            </div>
-            <div class="login__box-top--password">
-                <input type="text" name="password" placeholder="Please fill to your password">
-            </div>
-        </div>
-        <div class="login__box-bottom">
-            <div class="login__box-submit--login">
-                <button type="submit">login</button>
-            </div>
-        </div>
+<form action="/action-login" method="POST">
+  <div class="box__login">
+
+    <h1 class="box__login--title m-15 no_highlight">Sign In</h1>
+
+    <button class="btn d-flex btn-blue btn-shadow-blue m-15">
+      <span class="box__login--icon-google"></span>
+      <h1 class="box__login--content content__google--center">Sign in with google</h1>
+    </button>
+
+    <span class="box__login--other m-15">
+      <h1 class="p-20 no_highlight">Or</h1>
+    </span>
+
+    <div class="box__login--username d-flex flex-d m-15">
+      <!-- icon here -->
+      <span class="username__title no_highlight">User Name</span>
+      <div class="boder__radius">
+        <i class="fas fa-user boder__radius--position"></i>
+      </div>
+      <input class="input__style" placeholder="Eg: username0123" type="text" name="username">
     </div>
+
+    <div class="box_login--password d-flex flex-d m-15">
+      <!-- icon here -->
+      <span class="username__title no_highlight">Password</span>
+      <div class="boder__radius">
+        <i class="fas fa-lock boder__radius--position"></i>
+      </div>
+      <input class="input__style" placeholder="Eg: 0123456789" type="password" name="password">
+    </div>
+
+    <button class="btn btn-green btn-shadow-green d-flex d-j-around m-15">
+      <h1 class="box__login--content">Login</h1>
+    </button>
+
+    <div class="box__login--redirect m-15">
+      <span class="box__login--not-account no_highlight">Already have an account?</span>
+      <a class="box__login--redirect-login no_highlight" href="/face-register">Register</a>
+    </div>
+
+  </div>
 </form>
