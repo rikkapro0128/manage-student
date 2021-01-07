@@ -4,3 +4,41 @@
   background-image: url("../img/page-404.png");
   background-size: 100%;
   background-repeat: no-repeat; }
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between; }
+
+.box__header {
+  width: 100%;
+  background-color: #515E7B;
+  display: flex;
+  justify-content: center; }
+
+.container_header {
+  width: 1200px;
+  height: auto;
+  padding: 10px 0;
+  list-style: none;
+  display: flex;
+  padding: 0; }
+
+.header_items {
+  box-sizing: border-box;
+  background-color: #1971c2;
+  padding: 20px 0; }
+
+.header_items:hover {
+  background-color: rgba(25, 113, 194, 0.8); }
+
+.items_select {
+  text-decoration: none;
+  padding: 20px;
+  color: white; }
+
+.box_sign {
+  display: flex; }

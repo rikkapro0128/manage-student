@@ -30,9 +30,8 @@ class authentication {
             }).then((value) => { // create token then response to client
                 if(!value) { throw new Error('User Name or Password Invalid!'); }
                 const access_token = handle.generatorToken({ id: value._id });
-                res.setHeader('access_token', `${access_token}`);
-                // res.json({ token: access_token }).status(200);
-                // res.redirect('/');
+                res.cookie('Authorization', 'Bearer ' + access_token);
+                res.redirect('/');
             })
             next();
         } catch (error) {
@@ -67,15 +66,59 @@ class authentication {
             }).then((value) => { // create token then response to client
                 if(!value) { throw new Error('User Name or Password Invalid!'); }
                 const access_token = handle.generatorToken({ id: value._id });
-                res.setHeader('access_token', `${access_token}`);
+                res.cookie('Authorization', 'Bearer ' + access_token);
                 // res.json({ token: access_token }).status(200);
                 // res.redirect('/');
             })
-            next();
+            res.redirect('/');
         } catch (error) {
             let err = handleError.requestSign(error); // throw error if username duplicate
             next(err) 
         }
+    }
+
+    stopLoginOrRegister(req, res, next) {
+        
+        try {
+            if(!req.cookies.Authorization) {
+                next();
+                return;
+            }
+            const token = req.cookies.Authorization.split(' ')[1];
+            const payload = handle.verifyToken(token);
+            if(!payload) {
+                next();
+                return;
+            }
+            res.redirect('/');
+        } catch (error) {
+            next(error);
+        }
+
+    }
+
+    isLogin(req, res, next) {
+
+        try {
+            if(!req.cookies.Authorization) {
+                res.redirect('/face-login');
+                return;
+            }
+            const token = req.cookies.Authorization.split(' ')[1];
+            const payload = handle.verifyToken(token);
+            if(payload) {
+                next();
+                return;
+            }
+            res.redirect('/face-login');
+        } catch (error) {
+            next(error);
+        }
+    
+    }
+
+    logout(req, res, next) {
+        res.clearCookie('Authorization').redirect('/');
     }
     
 }

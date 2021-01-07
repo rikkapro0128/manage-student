@@ -12,11 +12,11 @@ class homeController {
     }
 
     mainInterface(req, res, next) {
-        res.send('This view main home!');
+        res.render('homePage');
     }
 
     about(req, res, next) {
-        res.send('This view about home!');
+        res.render('about');
     }
 
     login(req, res, next) {

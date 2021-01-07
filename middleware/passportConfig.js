@@ -8,6 +8,7 @@ passport.use(new jwtStrategy({
     jwtFromRequest: extractJwt.fromAuthHeaderAsBearerToken('Authorization'),
     secretOrKey: process.env.CODE_SERCET,
 },async (payload, done) => {
+    console.log(payload)
     try {
         await accountStudent.findOne({ _id: payload.id })
             .then(async (user) => {

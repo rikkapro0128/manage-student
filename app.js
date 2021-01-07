@@ -9,11 +9,13 @@ const app = express();
 const routerController = require('./Router/routerContoller');
 const connectDb = require('./Database/connectDb');
 const handleError = require('./middleware/handleEnrror');
+const cookieParser = require('cookie-parser');
 const port = 3000;
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({extended: true}));
 app.use(bodyPaser.json());
+app.use(cookieParser());
 
 // setup template engine
 app.set('views', path.join(__dirname, 'public/views/isRenders'));

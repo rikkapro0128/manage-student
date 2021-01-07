@@ -8,5 +8,17 @@ module.exports = new class handle {
         })
         return token;
     }
+    verifyToken(token) {
+        try {
+            const payload = jwt.verify(token, process.env.CODE_SERCET);
+            if(payload) {
+                return payload;
+            }
+        } catch (error) {
+            if(error) {
+                return null;
+            }
+        }
+    }
 
 }
