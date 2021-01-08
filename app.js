@@ -3,6 +3,7 @@ const express = require('express');
 const path = require('path');
 const mongoose  = require('mongoose');
 const handlebars = require('express-handlebars');
+const hbsHelper = require('handlebars');
 const bodyPaser = require('body-parser');
 const morgan = require('morgan');
 const app = express();
@@ -10,6 +11,7 @@ const routerController = require('./Router/routerContoller');
 const connectDb = require('./Database/connectDb');
 const handleError = require('./middleware/handleEnrror');
 const cookieParser = require('cookie-parser');
+const registerHelper = require('./middleware/registerHelper')(hbsHelper);
 const port = 3000;
 
 app.use(express.static(path.join(__dirname, 'public')));
