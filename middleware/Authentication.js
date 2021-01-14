@@ -84,9 +84,7 @@ class authentication {
                 next();
                 return;
             }
-            const token = req.cookies.Authorization.split(' ')[1];
-            const payload = handle.verifyToken(token);
-            if(!payload) {
+            if(!handle.verifyToken(req)) {
                 next();
                 return;
             }
@@ -104,13 +102,11 @@ class authentication {
                 res.redirect('/face-login');
                 return;
             }
-            const token = req.cookies.Authorization.split(' ')[1];
-            const payload = handle.verifyToken(token);
-            if(payload) {
+            if(handle.verifyToken(req)) {
                 next();
                 return;
             }
-            res.redirect('/face-login');
+            res.clearCookie('Authorization').redirect('/face-login');
         } catch (error) {
             next(error);
         }
@@ -118,6 +114,7 @@ class authentication {
     }
 
     logout(req, res, next) {
+        // delete token form client
         res.clearCookie('Authorization').redirect('/');
     }
     

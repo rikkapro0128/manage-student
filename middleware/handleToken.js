@@ -8,8 +8,9 @@ module.exports = new class handle {
         })
         return token;
     }
-    verifyToken(token) {
+    verifyToken(getTokenFormRequest) {
         try {
+            const token = getTokenFormRequest.cookies.Authorization.split(' ')[1];
             const payload = jwt.verify(token, process.env.CODE_SERCET);
             if(payload) {
                 return payload;

@@ -12,7 +12,7 @@ const connectDb = require('./Database/connectDb');
 const handleError = require('./middleware/handleEnrror');
 const cookieParser = require('cookie-parser');
 const registerHelper = require('./middleware/registerHelper')(hbsHelper);
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({extended: true}));

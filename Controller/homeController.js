@@ -28,17 +28,19 @@ class homeController {
     }
 
     async showAccount(req, res, next) {
-        await accountStudent.find({})
-            .then((users) => {
-                return users;   
-            })
-            .then((data) => {
-                res.json({
-                    message: 'show count!',
-                    user: data,
+        try {
+            await accountStudent.find({})
+                .then((data) => {
+                    const account = data.map(data => data.toObject());
+                    res.render('showAccount', {
+                        message: 'Show Account!',
+                        user: account,
+                    })
                 })
-            })
-        next();
+                return;
+            } catch (error) {
+                next(error);
+            }
     }
 
 }

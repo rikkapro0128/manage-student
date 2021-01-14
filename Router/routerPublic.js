@@ -5,7 +5,7 @@ const homeController = require('../Controller/homeController');
 const Auth = require('../middleware/Authentication');
 const passportConfig = require('../middleware/passportConfig');
 
-router.get('/face-login', Auth.stopLoginOrRegister , homeController.login);
+router.get('/face-login', Auth.stopLoginOrRegister, homeController.login);
 router.get('/face-register', Auth.stopLoginOrRegister, homeController.register);
 router.get('/', homeController.mainInterface);
 router.get('/about', homeController.about);
