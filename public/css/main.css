@@ -1,44 +1,155 @@
-.page_404 {
-  height: 100vh;
-  width: 100%;
-  background-image: url("../img/page-404.png");
-  background-size: 100%;
-  background-repeat: no-repeat; }
+html {
+  color: var(--text_primary); }
+
+.wrap {
+  max-width: 100%;
+  margin: 0 auto;
+  background-image: url("/img/bg_header.jpg");
+  background-position: 145px 0; }
 
 .container {
-  width: 100%;
-  height: 100%;
+  max-width: 1210px;
+  padding: 0 2rem;
+  margin: 0 auto; }
+
+.header_top {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between; }
+  height: 52px;
+  justify-content: space-between;
+  align-items: center; }
 
-.box__header {
-  width: 100%;
-  background-color: #515E7B;
+.header_bottom {
   display: flex;
-  justify-content: center; }
+  height: 42px; }
 
-.container_header {
-  width: 1200px;
-  height: auto;
-  padding: 10px 0;
-  list-style: none;
-  display: flex;
-  padding: 0; }
-
-.header_items {
-  box-sizing: border-box;
-  background-color: #1971c2;
-  padding: 20px 0; }
-
-.header_items:hover {
-  background-color: rgba(25, 113, 194, 0.8); }
-
-.items_select {
-  text-decoration: none;
-  padding: 20px;
-  color: white; }
-
-.box_sign {
-  display: flex; }
+.header_top--item {
+  height: 100%; }
+  .header_top--item .logo {
+    display: block;
+    width: 175px;
+    height: 100%;
+    background-image: url("/img/logo-nettruyen.png");
+    background-position: center center;
+    background-repeat: no-repeat; }
+  .header_top--item.search_light--novel {
+    position: relative;
+    width: 424px;
+    height: 40px; }
+    .header_top--item.search_light--novel .-item {
+      box-sizing: border-box;
+      width: 100%;
+      height: 100%;
+      font-size: 14px;
+      padding: 0 10px;
+      border: none;
+      outline: none;
+      border-radius: 50px; }
+    .header_top--item.search_light--novel .-btn {
+      position: absolute;
+      right: 0;
+      top: 0;
+      transform: translateX(0%);
+      box-sizing: border-box;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 40px;
+      height: 100%;
+      color: #646464;
+      text-decoration: none; }
+      .header_top--item.search_light--novel .-btn:hover {
+        border-top-right-radius: 50px;
+        border-bottom-right-radius: 50px;
+        background-color: silver; }
+  .header_top--item.manager {
+    display: flex;
+    width: 120px;
+    align-items: center;
+    justify-content: space-between; }
+    .header_top--item.manager ._user {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 40px;
+      height: 40px;
+      background-color: #ffffff;
+      color: #4b4b4b;
+      border-radius: 50px;
+      position: relative; }
+      .header_top--item.manager ._user .--dropdown {
+        position: absolute;
+        display: none;
+        width: 300px; }
+        .header_top--item.manager ._user .--dropdown:hover {
+          display: block;
+          background-color: white;
+          z-index: 999;
+          transform: translateY(50%);
+          cursor: pointer;
+          border-radius: 10px;
+          box-shadow: 0 2px 37px #4646464a;
+          padding: 10px; }
+        .header_top--item.manager ._user .--dropdown .-item {
+          position: relative;
+          box-sizing: border-box;
+          height: 72px;
+          padding: 5px;
+          border-radius: 10px; }
+          .header_top--item.manager ._user .--dropdown .-item:not(:last-child) {
+            margin-bottom: 20px; }
+          .header_top--item.manager ._user .--dropdown .-item:hover {
+            background-color: var(--hover_black); }
+          .header_top--item.manager ._user .--dropdown .-item:not(:last-child):after {
+            content: "";
+            display: block;
+            position: absolute;
+            height: 2px;
+            width: 95%;
+            left: 0;
+            bottom: -11px;
+            transform: translateX(2%);
+            background-color: var(--hover_black); }
+          .header_top--item.manager ._user .--dropdown .-item ._click {
+            display: block;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            color: var(--text_primary);
+            text-decoration: none; }
+            .header_top--item.manager ._user .--dropdown .-item ._click .-avatar {
+              width: 60px;
+              height: 60px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              font-size: 20px;
+              border-radius: 50px;
+              background-color: #a3a3a3; }
+            .header_top--item.manager ._user .--dropdown .-item ._click .-property {
+              height: 45px;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              padding-left: 15px; }
+              .header_top--item.manager ._user .--dropdown .-item ._click .-property .-name {
+                padding-bottom: 6px; }
+      .header_top--item.manager ._user:active > .--dropdown {
+        display: block; }
+    .header_top--item.manager ._notification {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 40px;
+      width: 40px;
+      color: #4b4b4b;
+      border-radius: 50px;
+      background-color: #ffffff;
+      position: relative; }
+      .header_top--item.manager ._notification .--dropdown {
+        display: none; }
+      .header_top--item.manager ._notification:hover {
+        cursor: pointer; }
+      .header_top--item.manager ._notification:active > .--dropdown {
+        cursor: pointer;
+        display: block; }

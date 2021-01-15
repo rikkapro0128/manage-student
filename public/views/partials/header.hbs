@@ -1,26 +1,76 @@
-<ul class="container_header">
-    <li class="header_items">
-        <a class="items_select" href="/">Quản Lí Sinh Viên</a>
-    </li>
-    <li class="header_items">
-        <a class="items_select" href="/security/secret-account">Show Account</a>
-    </li>
-    <li class="header_items">
-        <a class="items_select" href="/about">About</a>
-    </li>
-</ul>
-
-<ul class="box_sign" id="boxSign">
-    <li class="header_items">
-        <a href="/face-login" class="items_select">Login</a>
-    </li>
-    <li class="header_items">
-        <a href="/face-register" class="items_select">Register</a>
-    </li>
-</ul>
-
-<ul class="box_sign" id="boxLogout">
-    <li class="header_items">
-        <a href="/action-logout" class="items_select">Logout</a>
-    </li>
-</ul>
+<div class="header">
+    <ul class="header_top">
+        <li class="header_top--item">
+            {{!--  Logo for Nettruyen --}}
+            <a href="" class="logo"></a>
+        </li>
+        <li class="header_top--item search_light--novel">
+            <input class="-item" name="" id="" placeholder="Tìm truyện...">
+            <a href="" class="-btn">
+                <i class="fas fa-search"></i>
+            </a>
+        </li>
+        <li class="header_top--item manager">
+            <div class="_notification">
+                <i class="far fa-bell"></i>
+                <ul class="--dropdown">
+                    <li class="-item">Anything!</li>
+                    <li class="-item">Anything!</li>
+                    <li class="-item">Anything!</li>
+                    <li class="-item">Anything!</li>
+                </ul>
+            </div>
+            <div class="_user">
+                <i class="far fa-user"></i>
+                <ul class="--dropdown">
+                    <li class="-item profile">
+                        <a href="" class="_click">
+                            <span class="-avatar">
+                            <i class="far fa-user"></i>
+                            </span>
+                            <div class="-property">
+                                <span href="" class="-name">Tên Người Dùng</span>
+                                <span href="" class="-title">Xem Trang Cá Nhân</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="-item">
+                        <a href="" class="_click">
+                            <span class="-avatar">
+                            <i class="fas fa-book-reader"></i>
+                            </span>
+                            <div class="-property">
+                                <span href="" class="-name">Truyện Đã Theo Dõi</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="-item">
+                        <a href="" class="_click">
+                            <span class="-avatar">
+                            <i class="fas fa-list-ol"></i>
+                            </span>
+                            <div class="-property">
+                                <span href="" class="-name">Truyện Đã Đăng</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="-item">
+                        <a href="" class="_click">
+                            <span class="-avatar">
+                            <i class="fas fa-sign-out-alt"></i>
+                            </span>
+                            <div class="-property">
+                                <span href="" class="-name">Thoát</span>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+    </ul>
+    {{!-- <ul class="header_bottom">
+        <li class="header_top--item"></li>
+        <li class="header_top--item"></li>
+        <li class="header_top--item"></li>
+    </ul> --}}
+</div>
