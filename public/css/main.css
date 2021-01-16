@@ -5,7 +5,8 @@ html {
   max-width: 100%;
   margin: 0 auto;
   background-image: url("/img/bg_header.jpg");
-  background-position: 145px 0; }
+  background-position: 145px 0;
+  background-repeat: repeat-x; }
 
 .container {
   max-width: 1210px;
@@ -79,15 +80,29 @@ html {
       .header_top--item.manager ._user .--dropdown {
         position: absolute;
         display: none;
-        width: 300px; }
+        width: 300px;
+        right: -30px; }
+        .header_top--item.manager ._user .--dropdown:before {
+          position: absolute;
+          content: '';
+          display: block;
+          box-sizing: border-box;
+          border-color: transparent #bababa transparent transparent;
+          width: 65px;
+          height: 30px;
+          border-width: 20px;
+          border-top-width: -53px;
+          border-style: solid;
+          transform: rotate(90deg);
+          top: -52px;
+          right: 17px; }
         .header_top--item.manager ._user .--dropdown:hover {
           display: block;
-          background-color: white;
+          background-color: #bababa;
           z-index: 999;
-          transform: translateY(50%);
+          transform: translateY(62%);
           cursor: pointer;
           border-radius: 10px;
-          box-shadow: 0 2px 37px #4646464a;
           padding: 10px; }
         .header_top--item.manager ._user .--dropdown .-item {
           position: relative;

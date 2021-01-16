@@ -7,6 +7,7 @@ html {
     margin: 0 auto;
     background-image: url('/img/bg_header.jpg');
     background-position: 145px 0;
+    background-repeat: repeat-x;
 }
 
 .container {
@@ -95,14 +96,30 @@ html {
                 position: absolute;
                 display: none;
                 width: 300px;
+                right: -30px;
+                &:before {
+                    position: absolute;
+                    content: '';
+                    display: block;
+                    box-sizing: border-box;
+                    border-color: transparent #bababa transparent transparent;
+                    width: 65px;
+                    height: 30px;
+                    border-width: 20px;
+                    border-top-width: -53px;
+                    border-style: solid;
+                    transform: rotate(90deg);
+                    top: -52px;
+                    right: 17px;
+                }
                 &:hover {
                     display: block;
-                    background-color: rgb(255, 255, 255);
+                    background-color: #bababa;
                     z-index: 999;
-                    transform: translateY(50%);
+                    transform: translateY(62%);
                     cursor: pointer;
                     border-radius: 10px;
-                    box-shadow: 0 2px 37px #4646464a;
+                    // box-shadow: 0 2px 37px #4646464a;
                     padding: 10px;
                 }
                 .-item {
@@ -162,7 +179,6 @@ html {
             &:active > .--dropdown {
                 display: block;
             }
-            
         }
         ._notification {
             display: flex;

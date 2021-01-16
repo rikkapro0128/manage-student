@@ -1,3 +1,6 @@
 :root {
   --text_primary: rgb(56, 56, 56);
   --hover_black: rgba(56, 56, 56, 0.2); }
+
+html {
+  user-select: none; }
