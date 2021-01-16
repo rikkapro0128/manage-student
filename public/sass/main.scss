@@ -83,6 +83,7 @@ html {
         align-items: center;
         justify-content: space-between;
         ._user {
+            cursor: pointer;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -97,35 +98,32 @@ html {
                 display: none;
                 width: 300px;
                 right: -30px;
+                background-color: #ffffff;
+                transform: translateY(61%);
+                z-index: 999;
+                border-radius: 10px;
+                box-shadow: 0 2px 37px #4646464a;
+                padding: 10px;
+                border: 1px solid black;
                 &:before {
                     position: absolute;
                     content: '';
                     display: block;
+                    width: 20px;
+                    height: 20px;
+                    background-color: white;
                     box-sizing: border-box;
-                    border-color: transparent #bababa transparent transparent;
-                    width: 65px;
-                    height: 30px;
-                    border-width: 20px;
-                    border-top-width: -53px;
-                    border-style: solid;
-                    transform: rotate(90deg);
-                    top: -52px;
-                    right: 17px;
-                }
-                &:hover {
-                    display: block;
-                    background-color: #bababa;
-                    z-index: 999;
-                    transform: translateY(62%);
-                    cursor: pointer;
-                    border-radius: 10px;
-                    // box-shadow: 0 2px 37px #4646464a;
-                    padding: 10px;
+                    border-top: 1px solid black;
+                    border-right: 1px solid black;
+                    transform: rotate(-45deg);
+                    top: -10.6px;
+                    right: 39px;
                 }
                 .-item {
                     position: relative;
                     box-sizing: border-box;
                     height: 72px;
+                    cursor: pointer;
                     padding: 5px;
                     border-radius: 10px;
                     &:not(:last-child) {
@@ -176,12 +174,10 @@ html {
                     }
                 }
             }
-            &:active > .--dropdown {
-                display: block;
-            }
         }
         ._notification {
             display: flex;
+            cursor: pointer;
             justify-content: center;
             align-items: center;
             height: 40px;
@@ -191,14 +187,39 @@ html {
             background-color: #ffffff;
             position: relative;
             .--dropdown {
+                position: absolute;
                 display: none;
-            }
-            &:hover {
-                cursor: pointer;
-            }
-            &:active > .--dropdown {
-                cursor: pointer;
-                display: block;
+                width: 300px;
+                right: -30px;
+                background-color: #ffffff;
+                transform: translateY(61%);
+                z-index: 999;
+                border-radius: 10px;
+                box-shadow: 0 2px 37px #4646464a;
+                padding: 10px;
+                border: 1px solid black;
+                &:before {
+                    position: absolute;
+                    content: '';
+                    display: block;
+                    width: 20px;
+                    height: 20px;
+                    background-color: white;
+                    box-sizing: border-box;
+                    border-top: 1px solid black;
+                    border-right: 1px solid black;
+                    transform: rotate(-45deg);
+                    top: -10.6px;
+                    right: 39px;
+                }
+                .-item {
+                    position: relative;
+                    box-sizing: border-box;
+                    height: 72px;
+                    cursor: pointer;
+                    padding: 5px;
+                    border-radius: 10px;
+                }
             }
         }
     }
