@@ -19,6 +19,11 @@ html {
   width: 100%;
   height: 52px; }
 
+.side_bar {
+  width: 100%;
+  height: 290px;
+  background-color: #9e9e9e; }
+
 .box_header--top {
   height: 52px;
   box-sizing: border-box;
@@ -232,3 +237,64 @@ html {
         position: relative;
         padding-left: 5px;
         top: -1px; }
+
+.box_story {
+  width: 686px;
+  height: auto;
+  background-color: #9d9d9d; }
+  .box_story .list_story {
+    display: flex;
+    flex-wrap: wrap; }
+    .box_story .list_story .story {
+      width: 150px;
+      padding: 0 6px; }
+      .box_story .list_story .story .story_photo {
+        position: relative;
+        width: 100%;
+        height: 224px;
+        box-sizing: border-box; }
+        .box_story .list_story .story .story_photo .story_link {
+          width: 100%;
+          height: 100%;
+          display: block; }
+          .box_story .list_story .story .story_photo .story_link img {
+            width: 100%;
+            border-radius: 5px; }
+        .box_story .list_story .story .story_photo .story_info {
+          display: flex;
+          justify-content: space-around;
+          padding: 0 2px;
+          align-items: center;
+          position: absolute;
+          width: 100%;
+          height: 25px;
+          box-sizing: border-box;
+          background-color: #383838ad;
+          bottom: 0;
+          color: #ffffff;
+          font-size: 12px;
+          border-bottom-left-radius: 5px;
+          border-bottom-right-radius: 5px; }
+      .box_story .list_story .story .story_name {
+        width: 100%;
+        font-size: 18px;
+        color: var(--text_primary);
+        word-break: break-word;
+        padding: 5px 0; }
+      .box_story .list_story .story .story_state--chapter {
+        font-family: sans-serif; }
+        .box_story .list_story .story .story_state--chapter .-last {
+          display: flex;
+          justify-content: space-between;
+          align-items: center; }
+          .box_story .list_story .story .story_state--chapter .-last .-number-chapter {
+            font-size: 12px;
+            font-weight: 500; }
+          .box_story .list_story .story .story_state--chapter .-last .-time {
+            font-size: 10px; }
+        .box_story .list_story .story .story_state--chapter .-last:not(:last-child) {
+          padding: 5px 0;
+          display: flex; }
+        .box_story .list_story .story .story_state--chapter .-last:last-child {
+          padding-top: 5px;
+          display: flex; }

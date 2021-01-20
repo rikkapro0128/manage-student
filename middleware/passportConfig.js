@@ -6,7 +6,7 @@ const accountStudent = require('.././modelsController/accountStudent');
 
 passport.use(new jwtStrategy({
     jwtFromRequest: extractJwt.fromAuthHeaderAsBearerToken('Authorization'),
-    secretOrKey: process.env.CODE_SERCET,
+    secretOrKey: process.env.CODE_SECRET,
 },async (payload, done) => {
     console.log(payload)
     try {

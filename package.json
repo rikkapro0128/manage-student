@@ -1,7 +1,6 @@
 {
-  "name": "P_NODEJS_MONGODB_VUEJS",
+  "name": "-y",
   "version": "1.0.0",
-  "description": "",
   "main": "app.js",
   "scripts": {
     "start": "nodemon --inspect ./app.js -e js, json",
@@ -32,5 +31,14 @@
     "validator": "^13.5.2",
     "vue": "^2.6.12",
     "vue-server-renderer": "^2.6.12"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rikkapro0128/manage-student.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rikkapro0128/manage-student/issues"
+  },
+  "homepage": "https://github.com/rikkapro0128/manage-student#readme",
+  "description": ""
 }
