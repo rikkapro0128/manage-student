@@ -1,22 +1,10 @@
 html {
-    color: var(--text_primary) ;
-}
-
-.wrap {
-    position: relative;
-    max-width: 100%;
-    margin: 0 auto;
+    color: var(--text_primary);
+    background-color: #EBEBEB;
 }
 
 .box_header {
-    position: absolute;
     width: 100%;    
-}
-
-.container {
-    max-width: 1210px;
-    padding: 0 2rem;
-    margin: 0 auto;
 }
 
 // header top
@@ -24,12 +12,6 @@ html {
     width: 100%;
     height: 52px;
 }       
-
-.side_bar {
-    width:  100%;
-    height: 290px;
-    background-color: rgb(158, 158, 158);
-}
 
 .box_header--top {   
     height: 52px;
@@ -42,7 +24,7 @@ html {
 .box_header--bottom {
     height: 42px;
     box-sizing: border-box;
-    background-color: #EBEBEB;
+    background-color: #E4E4E4;
 }
 
 .header_top {
@@ -276,18 +258,62 @@ html {
     }
 }
 
-// box story
-
-.box_story {
-    width: 686px;
-    height: auto;
-    background-color: rgb(157, 157, 157);
-    .list_story {
+// side_bar
+.side_bar {
+    width: 100%;
+    background-color: #ffffff;
+    position: relative;
+    overflow: hidden;
+    .--title-name {
+        font-size: 20px;
+        color: #4891C2;
+    }
+    .side_show {
         display: flex;
-        flex-wrap: wrap;
+        width: 1155px;
+        height: 250px;
+        background-color: #ffffff;
+        overflow: hidden;
+        margin: 0 auto;
+        // transform: translate(0px -> -762px)
+        .story_appoint {
+            width: 100%;    
+            display: flex;
+            box-sizing: border-box;
+            .--appoint {
+                min-width: 190px;   
+                height: 100%;
+                overflow: hidden;
+                padding: 0 0.4375rem;
+                box-sizing: border-box;
+                .-link {
+                    width: 100%;
+                    height: 100%;
+                    box-sizing: border-box;
+                    .-image-story {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// box story
+.box_story {
+    width: 800px;
+    height: auto;
+    background-color: #fff;
+    .--title-name {
+        font-size: 20px;
+        color: #4891C2;
+    }
+    .list_story {   
         .story {    
             width: 150px;
-            padding: 0 6px;
+            &.story {
+                padding: 0 0.4375rem;
+            }
             .story_photo {
                 position: relative;
                 width: 100%;

@@ -6,3 +6,26 @@
 html {
     user-select: none;
 }
+
+.wrap {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.container {
+    max-width: 1210px;
+    padding: 0 2rem;
+    margin: 0 auto;
+}
+
+.row {
+    display: flex;
+    width: 100%;
+    height: inherit;
+    padding: 0.5625rem;
+    box-sizing: border-box;
+}
+
+.p-content {
+    padding: 1.125rem;
+}
