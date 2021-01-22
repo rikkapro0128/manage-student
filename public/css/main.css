@@ -243,8 +243,7 @@ html {
     .side_bar .side_show .story_appoint {
       width: fit-content;
       height: 100%;
-      display: flex;
-      transition: all 800ms ease-in-out; }
+      display: flex; }
       .side_bar .side_show .story_appoint .--appoint {
         min-width: 190px;
         height: 100%;
