@@ -1,93 +1,86 @@
 document.addEventListener("DOMContentLoaded", function() {
 
-    let count = 0;
-    let position = 0; 
-    let isDrop = false;
-    let isHold = false;
-    let isDrag = false;
-    let point = 0;
-    let speed = 20;
-    let coordinate = {
-        mouseX: 0,
-        mouseY: 0,
-    }
+    // let time = 5000;
+    // let position = 0; 
+    // let isDrop = false;
+    // // let isHold = false;
+    // // let isDrag = false;
+    // let click = false;
+    // let loop;
 
-    class side {
-        leftOrRight(entry, present, element) {
-            // console.log(entry, ' ', present) 
-            if(entry > present) {
-                point += -speed;
-                if(point <= -760) {
-                    point = -760;
-                }
-                $(element).css({    
-                    // translate to left
-                    transform: `translate3d(${point}px, 0px, 0px)`,
-                    transition: ``, 
-                    // you have () when write event.pageX - coordinate.mouseX
-                })
-            }
-            else {
-                point += speed;
-                if(point >= 0) {
-                    point = 0;
-                }
-                $(element).css({
-                    // translate to right
-                    transform: `translate3d(${point}px, 0px, 0px)`,
-                    transition: ``, 
-                    // you have () when write event.pageX - coordinate.mouseX
-                })
-            }
-            console.log(point)  
-            
-        }
-        hold(event) {
-            isHold = true;
-            isDrop = false;
-            isDrag = true;
-            coordinate.mouseX = event.pageX;
-            coordinate.mouseY = event.pageY;
-        }
-        drag(event) {
-            if(!isDrop && isHold) {
-                sideShow.leftOrRight(coordinate.mouseX, event.pageX, this)
-                if(isDrag) {
-                    $(this).find('a').on('click', function(event) {
-                        event.preventDefault();
-                    })
-                }
-            }
-        }
-        drop(event) {
-            isDrop = true;
-            isHold = true;
-            isDrag = false;
-        }
+    // class side {
         
-    }
+    //     nextSide(position, timeSmooth) {
+    //         $('.story_appoint').css({
+    //             transform: `translate3d(${position}px, 0px, 0px)`,
+    //             transition: `all ${timeSmooth}ms ease`,
+    //         })
+    //     }
+    //     loopSide(time) {
+    //         if(!click || isDrop) {
+    //             loop = setInterval(() => {
+    //                 if(position === -760) {
+    //                     position = 0;
+    //                     sideShow.nextSide(position, 1000);
+    //                 }else {
+    //                     position += -190;
+    //                     sideShow.nextSide(position, 800);
+    //                 }
+    //             }, time);
+    //         }
+    //     }
+    //     resetInterval(time) {
+    //         clearInterval(loop)
+    //         sideShow.loopSide(time);
+    //     }
+    //     clickLeft() {
+    //         console.log('click left')
+    //         click = true;
+    //         if(position === 0) {
+    //             position = -760;
+    //             sideShow.nextSide(position, 1000);
+    //         }else {
+    //             position += 190;
+    //             sideShow.nextSide(position, 300);
+    //         }
+    //         click = false;
+    //     }
+    //     clickRight() {
+    //         console.log('click right')
+    //         click = true;
+    //         if(position === -760) {
+    //             position = 0;
+    //             sideShow.nextSide(position, 1000);
+    //         }else {
+    //             position += -190;
+    //             sideShow.nextSide(position, 300);
+    //         }
+    //         click = false;
+    //     }
+        
+    // }
     
-    const sideShow = new side();
+    // const sideShow = new side();
     
-    $('.story_appoint').on('mousedown', sideShow.hold);
-    $('.story_appoint').on('mouseup', sideShow.drop);
-    $('.story_appoint').on('mousemove', sideShow.drag);
+    // // $('.story_appoint').on('mousemove', sideShow.drag);
 
-    if(!isDrag) {
-        setInterval(function() {
-            console.log(isDrag)
-            if(count < 5) {
-                $('.story_appoint').css({
-                    transform: `translate3d(-${position}px, 0px, 0px)`,
-                    transition: `all 800ms ease-in-out`,
-                })
-                position += 190;
-                count += 1;
-            }else {
-                position = 0;
-                count = 0;
-            }
-        }, 4000)
-    }
+    // sideShow.loopSide(time);
+
+    // // add event listener
+    // // $('.story_appoint').on('mousedown', sideShow.hold);
+    // // $('.story_appoint').on('mouseup', sideShow.drop);
+    // $('.--redirect .-left').on('click', sideShow.clickLeft)
+    // $('.--redirect .-right').on('click', sideShow.clickRight)
+    // $('.--redirect .-left').on('mouseup', sideShow.resetInterval(time))
+    // $('.--redirect .-right').on('mouseup', sideShow.resetInterval(time))
+    
+    $(".owl-carousel").owlCarousel({
+        items: 6,
+        autoplay: true,
+        autoplayTimeout: 5000,
+        rewind: true,
+        nav: true,
+        navText: ['', '']
+    });
     
 });

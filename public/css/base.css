@@ -23,3 +23,12 @@ html {
 
 .p-content {
   padding: 1.125rem; }
+
+.owl-stage-outer {
+  width: 100%;
+  height: 100%; }
+  .owl-stage-outer .owl-stage {
+    height: 100%; }
+    .owl-stage-outer .owl-stage .owl-item {
+      height: 100%;
+      max-width: 190px; }
