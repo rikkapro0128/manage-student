@@ -5,8 +5,8 @@ const homeController = require('../Controller/homeController');
 const Auth = require('../middleware/Authentication');
 const passportConfig = require('../middleware/passportConfig');
 
-router.get('/face-login', Auth.stopLoginOrRegister, homeController.login);
-router.get('/face-register', Auth.stopLoginOrRegister, homeController.register);
+router.get('/login', homeController.login);
+router.get('/registration', homeController.registration);
 router.get('/', homeController.mainInterface);
 router.get('/about', homeController.about);
 router.get('/404-not-found', homeController.pageNotFound);

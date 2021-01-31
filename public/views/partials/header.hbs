@@ -3,7 +3,7 @@
         <ul class="header_top container">
             <li class="header_top--item">
                 {{!--  Logo for Nettruyen --}}
-                <a href="" class="logo"></a>
+                <a href="/" class="logo"></a>
             </li>
             <li class="header_top--item search_light--novel">
                 <input class="-item" name="" id="" placeholder="Tìm truyện...">
@@ -11,7 +11,7 @@
                     <i class="fas fa-search"></i>
                 </a>
             </li>
-            <li class="header_top--item manager">
+            {{!-- <li class="header_top--item manager">
                 <div class="_notification">
                     <i class="far fa-bell"></i>
                     <ul class="--dropdown">
@@ -67,7 +67,21 @@
                         </li>
                     </ul>   
                 </div>
+            </li> --}}
+
+            {{!-- ON/ OFF ONE OF TWO ELEMENT --}}
+
+            <li class="header_top--item manager">
+                <div class="sign">
+                    <a href="/login" class="_in -hover-text">
+                        Đăng Nhập
+                    </a>
+                    <a href="/registration" class="_up -hover-text">
+                        Đăng Ký
+                    </a>
+                </div>
             </li>
+
         </ul>
     </div>
     <div class="box_header--bottom">

@@ -23,7 +23,7 @@ class homeController {
         res.render('login');
     }
 
-    register(req, res, next) {
+    registration(req, res, next) {
         res.render('register');
     }
 

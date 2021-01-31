@@ -1,43 +1,33 @@
-<form action="/action-register" method="POST">
-  <div class="box__login">
-
-    <h1 class="box__login--title m-15 no_highlight">Sign Up</h1>
-
-    <div class="box__login--username d-flex flex-d m-15">
-      <!-- icon here -->
-      <span class="username__title no_highlight">User Name</span>
-      <div class="boder__radius">
-        <i class="fas fa-user boder__radius--position"></i>
+<div class="signup">
+  <img src="https://files.yande.re/sample/622dbea58ded03335a05b5534bc6d573/yande.re%20437003%20sample%20dabadhi%20darling_in_the_franxx%20uniform%20zero_two_%28darling_in_the_franxx%29.jpg" alt="" class="signup-image">
+  <div class="signup-container">
+    <div class="tab">
+      <div class="tab-item is-active">Sign up</div>
+      <div class="tab-item">Sign in</div>
+    </div>
+    <h1 class="signup-heading">Sign up</h1>
+    <form class="signup-form" autocomplete="off">
+      <div class="form-group">
+        <label for="name" class="form-label">Full name</label>
+        <input type="text" id="name" class="form-input" placeholder="Ex: John Doe" required name="name">
       </div>
-      <input class="input__style" placeholder="Eg: username0123" type="text" name="username">
-    </div>
-
-    <div class="box_login--password d-flex flex-d m-15">
-      <!-- icon here -->
-      <span class="username__title no_highlight">Password</span>
-      <div class="boder__radius">
-        <i class="fas fa-lock boder__radius--position"></i>
+      <div class="form-group">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" id="email" class="form-input" placeholder="Ex: johndoe@email.com" required name="email">
       </div>
-      <input class="input__style" placeholder="Eg: 0123456789" type="password" name="password">
-    </div>
-
-    <div class="box_login--password d-flex flex-d m-15">
-      <!-- icon here -->
-      <span class="username__title no_highlight">Confirm Password</span>
-      <div class="boder__radius">
-        <i class="fas fa-lock boder__radius--position"></i>
+      <div class="form-group">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" id="password" class="form-input" placeholder="************" required name="password">
       </div>
-      <input class="input__style" placeholder="Eg: 0123456789" type="password" name="confirm_password">
-    </div>
-
-    <button class="btn btn-green btn-shadow-green d-flex d-j-around m-15">
-      <h1 class="box__login--content">Register</h1>
-    </button>
-
-    <div class="box__login--redirect m-15">
-      <span class="box__login--not-account no_highlight">Already have an account?</span>
-      <a class="box__login--redirect-login no_highlight" href="/face-login">Login</a>
-    </div>
-
+      <div class="form-group">
+        <label for="re-password" class="form-label">Repeat password</label>
+        <input type="password" id="re-password" class="form-input" placeholder="************" required
+          name="re-password">
+      </div>
+      <div class="form-group signup-term">
+        By clicking you agree with our <a href="#" class="signup-term-link">Term of use.</a>
+      </div>
+      <button type="submit" class="btn btn--gradient">Sign up</button>
+    </form>
   </div>
-</form>
+</div>
