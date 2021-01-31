@@ -1,5 +1,8 @@
 .box_header {
-  width: 100%; }
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 999; }
 
 .header {
   width: 100%;
@@ -26,6 +29,9 @@
 .header_bottom {
   display: flex;
   height: 42px; }
+
+.box_content {
+  margin-top: 92px; }
 
 .header_top--item {
   height: 100%; }
@@ -231,7 +237,8 @@
   overflow: hidden; }
   .side_bar .--title-name {
     font-size: 20px;
-    color: #4891C2; }
+    color: #4891C2;
+    padding: 18px 0; }
   .side_bar .side_show {
     width: 1140px;
     height: 220px;
@@ -340,16 +347,17 @@
   display: flex;
   justify-content: space-between; }
   .box_story .--title-name {
+    width: 100%;
     font-size: 20px;
-    color: #4891C2; }
+    color: #4891C2;
+    padding: 8px 0; }
   .box_story .content_left {
     width: 680px; }
     .box_story .content_left .list_story {
       width: 100%; }
       .box_story .content_left .list_story .story {
         width: 150px;
-        padding: 0 10px;
-        padding-top: 20px; }
+        padding: 10px; }
         .box_story .content_left .list_story .story .story_photo {
           position: relative;
           width: 100%;
@@ -379,11 +387,15 @@
             border-bottom-left-radius: 5px;
             border-bottom-right-radius: 5px; }
         .box_story .content_left .list_story .story .story_name {
-          width: 100%;
+          max-width: 152px;
           font-size: 16px;
           color: var(--text_primary);
           text-decoration: none;
-          padding: 5px 0; }
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          padding: 5px 0;
+          display: block; }
           .box_story .content_left .list_story .story .story_name:hover {
             color: var(--hover-text); }
         .box_story .content_left .list_story .story .story_state--chapter {
@@ -412,7 +424,7 @@
     .box_story .content_right .rank_story {
       margin-top: 40px;
       width: 100%;
-      border: 1px solid white;
+      border: 1px solid var(--box-border);
       border-top: none; }
       .box_story .content_right .rank_story .box_top {
         display: flex;

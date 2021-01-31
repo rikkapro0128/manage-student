@@ -1,5 +1,8 @@
 .box_header {
     width: 100%;    
+    position: fixed;
+    top: 0;
+    z-index: 999;
 }
 
 // header top
@@ -32,6 +35,10 @@
 .header_bottom {    
     display: flex;
     height: 42px;
+}
+
+.box_content {
+    margin-top: 92px;
 }
 
 .header_top--item {
@@ -267,6 +274,7 @@
     .--title-name {
         font-size: 20px;
         color: #4891C2;
+        padding: 18px 0;
     }
     .side_show {
         width: 1140px;
@@ -398,8 +406,10 @@
     display: flex;
     justify-content: space-between;
     .--title-name {
+        width: 100%;
         font-size: 20px;
         color: #4891C2;
+        padding: 8px 0;
     }
     .content_left {  
         width: 680px;
@@ -407,8 +417,7 @@
             width: 100%;
             .story {    
                 width: 150px;
-                padding: 0 10px;
-                padding-top: 20px;
+                padding: 10px;
                 .story_photo {
                     position: relative;
                     width: 100%;
@@ -457,11 +466,15 @@
                     }
                 }
                 .story_name {
-                    width: 100%;
+                    max-width: 152px;
                     font-size: 16px;
                     color: var(--text_primary);
                     text-decoration: none;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
                     padding: 5px 0;
+                    display: block;
                     &:hover {
                         color: var(--hover-text);
                     }
@@ -503,7 +516,7 @@
         .rank_story {
             margin-top: 40px;
             width: 100%;
-            border: 1px solid rgb(255, 255, 255);
+            border: 1px solid var(--box-border);
             border-top: none;
             .box_top {
                 display: flex;
