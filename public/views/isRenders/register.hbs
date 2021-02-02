@@ -1,19 +1,19 @@
 <div class="signup">
-  <img src="https://files.yande.re/sample/622dbea58ded03335a05b5534bc6d573/yande.re%20437003%20sample%20dabadhi%20darling_in_the_franxx%20uniform%20zero_two_%28darling_in_the_franxx%29.jpg" alt="" class="signup-image">
+  <img src="../img/bg_signup.jpg" alt="" class="sign-image">
   <div class="signup-container">
     <div class="tab">
-      <div class="tab-item is-active">Sign up</div>
       <div class="tab-item">Sign in</div>
+      <div class="tab-item is-active">Sign up</div>
     </div>
     <h1 class="signup-heading">Sign up</h1>
-    <form class="signup-form" autocomplete="off">
+    <form class="signup-form" autocomplete="off" action="/public/action-registration" method="POST">
       <div class="form-group">
         <label for="name" class="form-label">Full name</label>
-        <input type="text" id="name" class="form-input" placeholder="Ex: John Doe" required name="name">
+        <input type="text" id="fullname" class="form-input" placeholder="Ex: Wibu Chua" required name="fullname">
       </div>
       <div class="form-group">
         <label for="email" class="form-label">Email</label>
-        <input type="email" id="email" class="form-input" placeholder="Ex: johndoe@email.com" required name="email">
+        <input type="email" id="email" class="form-input" placeholder="Ex: wibuchua@email.com" required name="email">
       </div>
       <div class="form-group">
         <label for="password" class="form-label">Password</label>
@@ -22,12 +22,12 @@
       <div class="form-group">
         <label for="re-password" class="form-label">Repeat password</label>
         <input type="password" id="re-password" class="form-input" placeholder="************" required
-          name="re-password">
+          name="re_password">
       </div>
       <div class="form-group signup-term">
         By clicking you agree with our <a href="#" class="signup-term-link">Term of use.</a>
       </div>
-      <button type="submit" class="btn btn--gradient">Sign up</button>
+      <button type="submit" class="btn btn--gradient btn-sign">Sign up</button>
     </form>
   </div>
 </div>

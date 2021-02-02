@@ -38,7 +38,7 @@ connectDb(mongoose);
 app.use(morgan('combined'));
 
 // setup handle enrror
-app.use(handleError.requestAll);
+// app.use(handleError.requestAll);
 
 app.listen(port, () => {
     console.log(`Website is runing on localhost with port ${port}`);

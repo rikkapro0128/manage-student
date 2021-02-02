@@ -1,5 +1,5 @@
 module.exports = async (mongoose) => {
-    await mongoose.connect('mongodb://localhost:27017/quan-li-sinh-vien', {
+    await mongoose.connect('mongodb://localhost:27017/nettruyen', {
         useNewUrlParser: true,
         useUnifiedTopology: true,
         useFindAndModify: false,

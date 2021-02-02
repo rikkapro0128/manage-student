@@ -1,11 +1,11 @@
-const routerPublic = require('./routerPublic');
-const security = require('./security');
+const Public = require('./Public');
+const Private = require('./Private');
 const Auth = require('../middleware/Authentication');
 
 module.exports = function Router(app) {
 
-    app.use('/', routerPublic);
+    app.use('/public', Public);
 
-    app.use('/security', Auth.isLogin, security);
+    app.use('/private', Auth.checkLogin, Private);
 
 }
