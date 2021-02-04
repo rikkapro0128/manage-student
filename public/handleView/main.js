@@ -2,7 +2,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
     const signIn = $('.tab .tab-item')[0]; // signIn
     const signUp = $('.tab .tab-item')[1]; // signUp  
-    const btnSign = $('.btn-sign')
+    const btnSign = $('.btn-sign');
+    import { configCarousel } from './configCarousel.js';
+    import { handleButton } from './handleButton.js';
+    import { handleToken } from './handleToken.js';
+
+    configCarousel();
+    handleButton();
+    handleToken();
     const photoSign = {
         in: '../img/bg_signin.jpg',
         up: '../img/bg_signup.jpg',

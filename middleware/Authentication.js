@@ -32,7 +32,9 @@ class authentication {
             }).then((value) => { // create token then response to client
                 if(!value) { throw new Error('User Name or Password Invalid!'); }
                 const access_token = handle.generatorToken(value);
-                res.cookie('Authorization', 'Bearer ' + access_token);
+                res.cookie('Authorization', 'Bearer ' + access_token, {
+                    expires: new Date(Date.now() + 60),
+                });
                 res.redirect('/public/home');
             })
             next();
@@ -73,7 +75,9 @@ class authentication {
             }).then((value) => { // create token then response to client
                 if(!value) { throw new Error('User Name or Password Invalid!'); }
                 const access_token = handle.generatorToken({ id: value._id });
-                res.cookie('Authorization', 'Bearer ' + access_token);
+                res.cookie('Authorization', 'Bearer ' + access_token, {
+                    expires: new Date(Date.now() + 60),
+                });
                 res.redirect('/public/home');
                 // res.json({ token: access_token }).status(200);
             })

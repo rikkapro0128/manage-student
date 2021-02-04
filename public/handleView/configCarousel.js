@@ -1,5 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
-
+module.exports = function configCarousel () {
     $('.owl-carousel').owlCarousel({
         items: 6,
         autoplay: true,
@@ -8,5 +7,4 @@ document.addEventListener("DOMContentLoaded", function() {
         nav: true,
         navText: ['', '']
     });
-    
-});
+}

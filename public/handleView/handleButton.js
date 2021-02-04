@@ -1,6 +1,6 @@
-document.addEventListener("DOMContentLoaded", function() {
 
-    // Handle hide user profile if user click different area
+// Handle hide user profile if user click different area
+module.exports = function handleButton() {
     $(document).click(function(event) {
         //Hide the menus if visible
         if($(event.target).closest('.manager ._user').length && !$('.manager ._user').hasClass('show')) {
@@ -15,5 +15,5 @@ document.addEventListener("DOMContentLoaded", function() {
         }
         
     });
-        
-});
+}
+
