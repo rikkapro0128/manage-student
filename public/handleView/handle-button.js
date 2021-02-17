@@ -1,6 +1,6 @@
-
 // Handle hide user profile if user click different area
-module.exports = function handleButton() {
+import { eraseCookie } from './handle-token.js';
+export function handleButton() {
     $(document).click(function(event) {
         //Hide the menus if visible
         if($(event.target).closest('.manager ._user').length && !$('.manager ._user').hasClass('show')) {
@@ -13,7 +13,10 @@ module.exports = function handleButton() {
         if($(event.target).closest('.--dropdown').length) {
             $('.manager ._user .--dropdown').show();
         }
-        
     });
+    $('#logout').click(function(event) {
+        event.preventDefault();
+        eraseCookie('Authorization');
+        location.reload();
+    })
 }
-

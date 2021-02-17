@@ -1,0 +1,56 @@
+.user_properties {
+  padding: 0 1.5rem;
+  background-color: var(--header-bottom);
+  color: var(--text-primary); }
+  .user_properties .route_list {
+    padding: 1.5rem 0; }
+  .user_properties .user_profile {
+    display: flex; }
+    .user_properties .user_profile .route_detail {
+      min-width: 24rem; }
+      .user_properties .user_profile .route_detail .show_user {
+        display: flex;
+        border: 2px solid var(--box-border);
+        border-radius: 5px;
+        padding: 5px; }
+        .user_properties .user_profile .route_detail .show_user .-avatar {
+          height: 80px;
+          max-width: 80px;
+          display: block; }
+          .user_properties .user_profile .route_detail .show_user .-avatar img {
+            border-radius: 50px;
+            width: 100%; }
+        .user_properties .user_profile .route_detail .show_user .-info {
+          width: 100%;
+          flex-direction: column;
+          display: flex;
+          justify-content: center;
+          text-align: center; }
+          .user_properties .user_profile .route_detail .show_user .-info span {
+            padding: 8px 0; }
+          .user_properties .user_profile .route_detail .show_user .-info .--user-name {
+            font-size: 16px;
+            font-weight: 800; }
+      .user_properties .user_profile .route_detail .-index {
+        margin-top: 1.5rem; }
+        .user_properties .user_profile .route_detail .-index .--item {
+          width: 100%;
+          padding: 1.2rem 0; }
+    .user_properties .user_profile .show_content {
+      width: 100%;
+      margin-left: 2.5rem; }
+      .user_properties .user_profile .show_content .--title {
+        font-size: 20px;
+        padding: 1.5rem 0; }
+      .user_properties .user_profile .show_content div {
+        max-width: 340px; }
+        .user_properties .user_profile .show_content div .-info {
+          display: flex;
+          justify-content: space-between;
+          padding: 1rem 0; }
+        .user_properties .user_profile .show_content div .-content {
+          border: 2px solid var(--box-border);
+          padding: 1.5rem 2rem; }
+          .user_properties .user_profile .show_content div .-content span {
+            display: block;
+            padding: 1rem 0; }

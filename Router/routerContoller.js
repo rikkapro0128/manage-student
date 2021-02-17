@@ -1,11 +1,14 @@
 const Public = require('./Public');
 const Private = require('./Private');
-const Auth = require('../middleware/Authentication');
+const View = require('./View')
+const checkToken = require('../middleware/checkTokenIsExpired');
 
 module.exports = function Router(app) {
 
-    app.use('/public', Public);
+    app.use('/', View)
 
-    app.use('/private', Auth.checkLogin, Private);
+    app.use('/public', checkToken.isExpired, Public);
+
+    app.use('/private', checkToken.checkLogin, Private);
 
 }

@@ -33,9 +33,9 @@ class authentication {
                 if(!value) { throw new Error('User Name or Password Invalid!'); }
                 const access_token = handle.generatorToken(value);
                 res.cookie('Authorization', 'Bearer ' + access_token, {
-                    expires: new Date(Date.now() + 60),
+                    maxAge: 1000 * parseInt(process.env.MAX_AGE),
                 });
-                res.redirect('/public/home');
+                res.redirect('/home');
             })
             next();
         } catch (error) {
@@ -76,26 +76,13 @@ class authentication {
                 if(!value) { throw new Error('User Name or Password Invalid!'); }
                 const access_token = handle.generatorToken({ id: value._id });
                 res.cookie('Authorization', 'Bearer ' + access_token, {
-                    expires: new Date(Date.now() + 60),
+                    maxAge: 1000 * parseInt(process.env.MAX_AGE),
                 });
-                res.redirect('/public/home');
+                res.redirect('/home');
                 // res.json({ token: access_token }).status(200);
             })
-            res.redirect('/');
         } catch (error) {
             next(error) 
-        }
-    }
-
-    checkLogin(req, res, next) {
-        try {
-            if(req.cookies.Authorization && handle.verifyToken(req)) {
-                next();
-            }else {
-                res.render('mustSign');
-            }
-        } catch (error) {
-            next(error);
         }
     }
     

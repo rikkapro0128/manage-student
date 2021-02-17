@@ -7,21 +7,18 @@ module.exports = new class handle {
             id: payload._id,
             fullName: payload.fullName,
         }, process.env.CODE_SECRET, {
-            expiresIn: 60,
+            expiresIn: parseInt(process.env.MAX_AGE),
         })
         return token;
     }
-    verifyToken(getTokenFormRequest) {
+    verifyToken(token) {
         try {
-            const token = getTokenFormRequest.cookies.Authorization.split(' ')[1];
-            const payload = jwt.verify(token, process.env.CODE_SECRET);
-            if(payload) {
-                return true; // token is valid
+            if(token) {
+                const payload = jwt.verify(token, process.env.CODE_SECRET)
+                if(payload) { return true }
             }
         } catch (error) {
-            if(error) {
-                return false; // token is invalid
-            }
+            if(error) { return false }
         }
     }
 

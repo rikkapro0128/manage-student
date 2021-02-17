@@ -41,5 +41,5 @@ app.use(morgan('combined'));
 // app.use(handleError.requestAll);
 
 app.listen(port, () => {
-    console.log(`Website is runing on localhost with port ${port}`);
+    console.log(`Website is runing at http://localhost:${port}`);
 });

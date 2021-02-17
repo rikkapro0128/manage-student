@@ -1,7 +1,7 @@
 class ControllerPrivate {
 
-    upStory(req, res, next) {
-        res.render('upStory');
+    profile(req, res, next) {
+        res.render('profile');
     }
 
 }
