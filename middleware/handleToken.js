@@ -22,4 +22,15 @@ module.exports = new class handle {
         }
     }
 
+    getPayLoad(token) {
+        try {
+            if(token) {
+                const payload = jwt.verify(token, process.env.CODE_SECRET)
+                if(payload) { return payload }
+            }
+        } catch (error) {
+            if(error) { return null }
+        }
+    }
+
 }

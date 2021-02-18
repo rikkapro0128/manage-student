@@ -32,25 +32,51 @@
             font-size: 16px;
             font-weight: 800; }
       .user_properties .user_profile .route_detail .-index {
-        margin-top: 1.5rem; }
+        margin: 1.5rem 0; }
         .user_properties .user_profile .route_detail .-index .--item {
           width: 100%;
-          padding: 1.2rem 0; }
+          transition: all 0.1s linear;
+          cursor: pointer; }
+          .user_properties .user_profile .route_detail .-index .--item a {
+            text-decoration: none;
+            color: var(--text-primary);
+            width: inherit;
+            display: block;
+            line-height: 3;
+            padding-left: 0.8rem; }
+          .user_properties .user_profile .route_detail .-index .--item:hover {
+            background-color: var(--hover-btn); }
     .user_properties .user_profile .show_content {
       width: 100%;
-      margin-left: 2.5rem; }
+      margin-left: 2.5rem;
+      margin-bottom: 2.5rem; }
       .user_properties .user_profile .show_content .--title {
         font-size: 20px;
-        padding: 1.5rem 0; }
-      .user_properties .user_profile .show_content div {
-        max-width: 340px; }
-        .user_properties .user_profile .show_content div .-info {
+        padding: 1.5rem 0;
+        position: relative; }
+        .user_properties .user_profile .show_content .--title:before {
+          content: '';
+          position: absolute;
+          height: 4px;
+          width: 10%;
+          bottom: 0;
+          left: 0;
+          background-color: var(--tick); }
+      .user_properties .user_profile .show_content > div {
+        max-width: 550px;
+        min-width: 340px; }
+        .user_properties .user_profile .show_content > div .-info {
           display: flex;
           justify-content: space-between;
-          padding: 1rem 0; }
-        .user_properties .user_profile .show_content div .-content {
+          padding: 1rem 0;
+          margin: 1.5rem 0;
+          border-left: 4px solid var(--tick);
+          padding-left: 0.8rem; }
+          .user_properties .user_profile .show_content > div .-info .-edit {
+            cursor: pointer; }
+        .user_properties .user_profile .show_content > div .-content {
           border: 2px solid var(--box-border);
           padding: 1.5rem 2rem; }
-          .user_properties .user_profile .show_content div .-content span {
+          .user_properties .user_profile .show_content > div .-content span {
             display: block;
             padding: 1rem 0; }

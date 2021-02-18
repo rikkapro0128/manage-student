@@ -3,6 +3,7 @@
 @import url("./login.css");
 @import url("./base.css");
 @import url("./profile.css");
+@import url("./account-detail.css");
 .box_header {
   width: 100%;
   position: fixed;

@@ -1,6 +1,12 @@
 ::placeholder {
   font-size: 14px; }
 
+input {
+  outline: none; }
+
+select {
+  outline: none; }
+
 :root {
   --text-primary: rgb(255, 255, 255);
   --hover-text: hsl(160, 55%, 55%);
@@ -22,7 +28,9 @@
   --header-top: ;
   --header-bottom: #232931;
   --hover-btn: #4ecca3;
-  --box:   #232931; }
+  --box:   #232931;
+  --tick: #e21a7a;
+  --bg-tick: #21212196; }
 
 @keyframes flash {
   to {
@@ -74,7 +82,7 @@ body {
 
 .btn-s {
   color: white;
-  padding: 0.6rem;
+  padding: 10px;
   width: fit-content;
   max-width: 20rem;
   border-radius: 5rem;
@@ -159,3 +167,7 @@ body {
   bottom: 50px;
   display: none;
   cursor: pointer; }
+
+.tick {
+  border-left: 4px solid var(--tick);
+  background-color: var(--bg-tick); }

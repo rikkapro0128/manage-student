@@ -12,17 +12,17 @@
                     </span>
                     <p class="-info">
                         <span class="--hello">Chào bạn nè🤭</span>
-                        <span class="--user-name">{{ data.fullName }}</span>
+                        <span class="--user-name">rikkapro0128</span>
                     </p>
                 </div>
                 <ul class="-index">
-                    <li class="--item tick">
+                    <li class="--item">
                         <a href="/private/profile">
                             <i class="fab fa-wizards-of-the-coast"></i>
                             Thông tin chung
                         </a>
                     </li>
-                    <li class="--item">
+                    <li class="--item tick">
                         <a href="/private/account-detail">
                             <i class="fas fa-info-circle"></i>
                             Thông tin tài khoản
@@ -71,15 +71,40 @@
                 <div>
                     <p class="-info">
                         <span class="-account">Thông tin tài khoản</span>
-                        <span class="-edit">
-                            Chỉnh sửa
-                            <i class="fas fa-pencil-alt"></i>
-                        </span>
                     </p>
-                    <p class="-content">
-                        <span class="--user-name">Tên người dùng : {{ data.fullName }}</span>
-                        <span class="--email">Email : {{ data.email }}</span>
-                    </p>
+                    <div class="-content">
+                        <div class="form-group_user">
+                            <label for="" class="title">Tài khoản</label>
+                            <input type="text" class="info" disabled value="{{ data.fullName }}">
+                        </div>
+                        <div class="form-group_user">
+                            <label for="" class="title">Địa chỉ email</label>
+                            <input type="text" class="info" disabled value="{{ data.email }}">
+                        </div>
+                        <form action="/private/account-detail?_method=PATCH" method="POST">
+                            <div class="form-group_user">
+                                <label for="" class="title">Tên</label>
+                                <input type="text" class="info" name="firtName">
+                            </div>
+                            <div class="form-group_user">
+                                <label for="" class="title">Họ</label>
+                                <input type="text" class="info" name="lastName">
+                            </div>
+                            <div class="form-group_user">
+                                <label for="" class="title">Giới tính</label>
+                                <select class="--gender" name="gender" id="">
+                                    <option value="Nam" selected>Nam</option>
+                                    <option value="Nữ">Nữ</option>
+                                </select>
+                            </div>
+                            <div class="form-group_user">
+                                <button class="btn-s">
+                                    <i class="fas fa-pencil-alt"></i>
+                                    Cập nhật
+                                </button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>

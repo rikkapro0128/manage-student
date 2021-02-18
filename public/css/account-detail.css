@@ -1,0 +1,17 @@
+.-content .form-group_user {
+  display: flex;
+  flex-direction: column; }
+  .-content .form-group_user .title {
+    padding: 1rem 0; }
+  .-content .form-group_user .info {
+    font-size: 1.4rem;
+    padding: 0.6rem;
+    border-radius: 5px;
+    border-color: transparent; }
+    .-content .form-group_user .info:focus {
+      border: 2px solid var(--hover-text); }
+  .-content .form-group_user .--gender {
+    padding: 0.6rem;
+    border-radius: 5px; }
+  .-content .form-group_user button {
+    margin: 1rem 0; }

@@ -1,7 +1,7 @@
 const Public = require('./Public');
 const Private = require('./Private');
 const View = require('./View')
-const checkToken = require('../middleware/checkTokenIsExpired');
+const checkToken = require('../middleware/checkSign');
 
 module.exports = function Router(app) {
 

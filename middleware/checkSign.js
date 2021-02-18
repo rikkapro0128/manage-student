@@ -1,4 +1,4 @@
-const handleToken = require('../middleware/handleToken');
+const handleToken = require('./handleToken');
 
 class checkToken {
 

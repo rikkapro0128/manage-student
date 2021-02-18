@@ -82,6 +82,7 @@ export function handleToken() {
         manage.empty();
         manage.html(signManageNoSign).fadeIn(200);
         showExpire.closest('.--item').fadeOut(200);
+        location.reload();
       }
     }, 1000)
   }
