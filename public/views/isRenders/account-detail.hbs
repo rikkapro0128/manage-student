@@ -84,17 +84,21 @@
                         <form action="/private/account-detail?_method=PATCH" method="POST">
                             <div class="form-group_user">
                                 <label for="" class="title">Tên</label>
-                                <input type="text" class="info" name="firtName">
+                                <input type="text" class="info" name="firstName" value="{{ data.infoAccount.firstName }}">
                             </div>
                             <div class="form-group_user">
                                 <label for="" class="title">Họ</label>
-                                <input type="text" class="info" name="lastName">
+                                <input type="text" class="info" name="lastName" value="{{ data.infoAccount.lastName }}">
+                            </div>
+                            <div class="form-group_user">
+                                <label for="" class="title">Tuổi</label>
+                                <input type="text" class="info" name="age" value="{{ data.infoAccount.age }}">
                             </div>
                             <div class="form-group_user">
                                 <label for="" class="title">Giới tính</label>
-                                <select class="--gender" name="gender" id="">
-                                    <option value="Nam" selected>Nam</option>
-                                    <option value="Nữ">Nữ</option>
+                                <select class="--gender" name="gender" id="" value="{{ data.infoAccount.gender }}">
+                                    <option value="Nam" {{gender 'Nam' data.infoAccount.gender}} >Nam</option>
+                                    <option value="Nữ" {{gender 'Nữ' data.infoAccount.gender}} >Nữ</option>
                                 </select>
                             </div>
                             <div class="form-group_user">

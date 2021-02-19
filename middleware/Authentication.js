@@ -1,4 +1,4 @@
-const accountStudent = require('../modelsController/accountStudent');
+const Account = require('../modelsController/account.js');
 const bcrypt = require('bcrypt');
 const joi = require('joi');
 const handleError = require('../middleware/handleEnrror');
@@ -21,7 +21,7 @@ class authentication {
             }).then(async(value) => { // return object value entered by user
                 return value;
             }).then(async(value) => { // check value username is have in database
-                const user = await accountStudent.findOne({ fullName: value.fullName });
+                const user = await Account.findOne({ fullName: value.fullName });
                 return user ? { user, value } : undefined; 
             }).then(async(data) => { // check value password is have in database
                 if(!data) { throw new Error('User Name or Password Invalid!'); }
@@ -31,7 +31,7 @@ class authentication {
                 }) : checked;
             }).then((value) => { // create token then response to client
                 if(!value) { throw new Error('User Name or Password Invalid!'); }
-                const access_token = handle.generatorToken(value);
+                const access_token = handle.generatorToken({ id: value._id });
                 res.cookie('Authorization', 'Bearer ' + access_token, {
                     maxAge: 1000 * parseInt(process.env.MAX_AGE),
                 });
@@ -62,7 +62,7 @@ class authentication {
             }).then(async(value) => { // save account user created
                 // console.log(value)
                 let data;
-                await new accountStudent({
+                await new Account({
                     fullName: value.fullName,
                     email: value.email,
                     hashPassword: value.password,

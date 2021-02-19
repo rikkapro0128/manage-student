@@ -4,8 +4,7 @@ module.exports = new class handle {
 
     generatorToken(payload) {
         const token = jwt.sign({
-            id: payload._id,
-            fullName: payload.fullName,
+            id: payload.id,
         }, process.env.CODE_SECRET, {
             expiresIn: parseInt(process.env.MAX_AGE),
         })

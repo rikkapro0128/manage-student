@@ -2,7 +2,7 @@ const passport = require('passport');
 const jwtStrategy = require('passport-jwt').Strategy;
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const extractJwt = require('passport-jwt').ExtractJwt;
-const accountStudent = require('.././modelsController/accountStudent');
+const Account = require('.././modelsController/account.js');
 
 passport.use(new jwtStrategy({
     jwtFromRequest: extractJwt.fromAuthHeaderAsBearerToken('Authorization'),

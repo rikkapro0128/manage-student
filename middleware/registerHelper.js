@@ -1,7 +1,9 @@
 module.exports = function(hbs) {
 
-    hbs.registerHelper('comparePassword', function(codeHash) {
-        
+    hbs.registerHelper('gender', function(type, value) {
+        if(type === value) { 
+            return 'selected';
+        }
     });
 
 }
