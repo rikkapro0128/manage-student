@@ -14,9 +14,9 @@ export function handleButton() {
             $('.manager ._user .--dropdown').show();
         }
     });
-    $('#logout').click(function(event) {
+    $('.logout').click(function(event) {
         event.preventDefault();
         eraseCookie('Authorization');
-        location.reload();
+        location.replace(location.origin + `/home`);
     })
 }

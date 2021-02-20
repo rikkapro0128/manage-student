@@ -13,6 +13,7 @@ const account = new Schema({
         firstName: { type: String, default: '' },
         age: { type: Number, default: 0 },
         gender: { type: String, default: 'Nam' },
+        avatar: { type: String, default: '' },
     },
 });
 

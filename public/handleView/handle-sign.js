@@ -53,7 +53,7 @@ export function handleToken() {
           </a>
       </li>
       <li class="-item">
-          <a href="/home" class="_click" id="logout">
+          <a href="/home" class="_click logout" id="header">
               <span class="-avatar">
               <i class="fas fa-sign-out-alt"></i>
               </span>

@@ -1,5 +1,8 @@
 const user = require('../modelsController/account.js');
-const handleToken = require('../middleware/handleToken.js')
+const handleToken = require('../middleware/handleToken.js');
+const bcrypt = require('bcrypt');
+const saltRounds = 10;
+const joi = require('joi');
 
 class ControllerPrivate {
 
@@ -32,7 +35,40 @@ class ControllerPrivate {
             //     console.log(value);
             //     console.log(reason);
             // })
-        res.redirect('/private/account-detail');
+        res.redirect('#');
+    }
+
+    changPassword(req, res, next) {
+        res.render('change-password');
+    }
+
+    async UpdateChangPassword(req, res, next) {
+        const validateUser = joi.object({
+            oldPassword: joi.string().required().min(6).max(20),
+            newPassword: joi.string().required().min(6).max(20),
+            confirmPassword: joi.any().valid(joi.ref('newPassword')).required(),
+        });
+        await validateUser.validateAsync({
+            oldPassword: req.body.oldPassword,
+            newPassword: req.body.newPassword,
+            confirmPassword: req.body.confirmPassword,
+        }).then(async(data) => { // check value password is have in database
+            if(!data) { throw new Error('User Name or Password Invalid!'); }
+            const token = req.cookies.Authorization ? req.cookies.Authorization.split(' ')[1] : '';
+            const payload = handleToken.getPayLoad(token);
+            const account = await user.findOne({ _id: payload.id });
+            await bcrypt.compare(data.oldPassword, account.hashPassword).then(async function(result) {
+                if(result) {
+                    await bcrypt.hash(data.newPassword, saltRounds).then(async function(hash) {
+                        // Store hash in your password DB.
+                        await user.findOneAndUpdate({ _id: payload.id }, { hashPassword: hash });
+                        res.redirect('#');
+                    });
+                }else {
+                    res.json({ message: 'Mật khẩu cũ bạn nhập chưa có đúng nè~~!' });
+                }
+            })
+        })
     }
 
 }
