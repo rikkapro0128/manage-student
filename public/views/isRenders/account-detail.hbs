@@ -7,12 +7,11 @@
             <div class="route_detail">
                 <div class="show_user">
                     <span class="-avatar">
-                        <img src="https://i.pinimg.com/originals/01/48/0f/01480f29ce376005edcbec0b30cf367d.jpg"
-                            alt="avatar">
+                        <img src="{{ showAvatar data.infoAccount.avatar data.infoAccount.gender }}" alt="avatar">
                     </span>
                     <p class="-info">
                         <span class="--hello">Chào bạn nè🤭</span>
-                        <span class="--user-name">rikkapro0128</span>
+                        <span class="--user-name">{{ handleName data }}</span>
                     </p>
                 </div>
                 <ul class="-index">
@@ -68,11 +67,11 @@
             </div>
             <div class="show_content">
                 <h1 class="--title">THÔNG TIN CHUNG</h1>
-                <div>
-                    <p class="-info">
+                <div class="detail_account">
+                    <p class="-content">
                         <span class="-account">Cập nhật thông tin tài khoản</span>
                     </p>
-                    <div class="-content">
+                    <div class="update_profile">
                         <div class="form-group_user">
                             <label for="" class="title">Tài khoản</label>
                             <input type="text" class="info" disabled value="{{ data.fullName }}">
@@ -81,10 +80,12 @@
                             <label for="" class="title">Địa chỉ email</label>
                             <input type="text" class="info" disabled value="{{ data.email }}">
                         </div>
-                        <form action="/private/account-detail?_method=PATCH" method="POST">
+                        <form action="/private/account-detail?_method=PATCH" method="POST"
+                            enctype="multipart/form-data">
                             <div class="form-group_user">
                                 <label for="" class="title">Tên</label>
-                                <input type="text" class="info" name="firstName" value="{{ data.infoAccount.firstName }}">
+                                <input type="text" class="info" name="firstName"
+                                    value="{{ data.infoAccount.firstName }}">
                             </div>
                             <div class="form-group_user">
                                 <label for="" class="title">Họ</label>
@@ -97,12 +98,16 @@
                             <div class="form-group_user">
                                 <label for="" class="title">Giới tính</label>
                                 <select class="--gender" name="gender">
-                                    <option value="Nam" {{gender 'Nam' data.infoAccount.gender}} >Nam</option>
-                                    <option value="Nữ" {{gender 'Nữ' data.infoAccount.gender}} >Nữ</option>
+                                    <option value="Nam" {{gender 'Nam' data.infoAccount.gender}}>Nam</option>
+                                    <option value="Nữ" {{gender 'Nữ' data.infoAccount.gender}}>Nữ</option>
                                 </select>
                             </div>
                             <div class="form-group_user">
-                                <button class="btn-s">
+                                <label for="" class="title">Tải avatar lên nè🤭</label>
+                                <input type="file" class="info" name="avatar">
+                            </div>
+                            <div class="form-group_user">
+                                <button class="btn">
                                     <i class="fas fa-pencil-alt"></i>
                                     Cập nhật
                                 </button>

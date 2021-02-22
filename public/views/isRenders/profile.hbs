@@ -7,12 +7,12 @@
             <div class="route_detail">
                 <div class="show_user">
                     <span class="-avatar">
-                        <img src="https://i.pinimg.com/originals/01/48/0f/01480f29ce376005edcbec0b30cf367d.jpg"
+                        <img src="{{ showAvatar data.infoAccount.avatar data.infoAccount.gender }}"
                             alt="avatar">
                     </span>
                     <p class="-info">
                         <span class="--hello">Chào bạn nè🤭</span>
-                        <span class="--user-name">{{ data.fullName }}</span>
+                        <span class="--user-name">{{ handleName data }}</span>
                     </p>
                 </div>
                 <ul class="-index">
@@ -68,9 +68,9 @@
             </div>
             <div class="show_content">
                 <h1 class="--title">THÔNG TIN CHUNG</h1>
-                <div>
-                    <p class="-info">
-                        <span class="-account">Thông tin tài khoản</span>
+                <div class="information">
+                    <p class="edit_profile">
+                        <span class="-log">Thông tin tài khoản</span>
                         <span class="-edit">
                             Chỉnh sửa
                             <i class="fas fa-pencil-alt"></i>

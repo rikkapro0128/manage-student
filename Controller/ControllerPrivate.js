@@ -30,16 +30,37 @@ class ControllerPrivate {
     async updateAccountDetail(req, res, next) {
         const token = req.cookies.Authorization ? req.cookies.Authorization.split(' ')[1] : '';
         const payload = handleToken.getPayLoad(token);
-        await user.findOneAndUpdate({ _id: payload.id }, { infoAccount: req.body });
-            // .then((value, reason) => {
-            //     console.log(value);
-            //     console.log(reason);
-            // })
+        if(req.file) {
+            req.body.avatar = '/' + req.file.path.split('\\').slice(1).join('/');
+            await user.findOneAndUpdate({ _id: payload.id }, { 
+                $set: { 
+                    infoAccount: req.body,
+                    'infoAccount.lastModified': new Date,
+                },
+            });
+        }else {
+            await user.findOneAndUpdate({ _id: payload.id }, { 
+                $set: { 
+                    'infoAccount.firstName': req.body.firstName,
+                    'infoAccount.lastName': req.body.lastName,
+                    'infoAccount.age': req.body.age,
+                    'infoAccount.gender': req.body.gender,
+                    'infoAccount.lastModified': new Date,
+                },
+            });
+        }
         res.redirect('#');
     }
 
-    changPassword(req, res, next) {
-        res.render('change-password');
+    async changPassword(req, res, next) {
+        const token = req.cookies.Authorization ? req.cookies.Authorization.split(' ')[1] : '';
+        const payload = handleToken.getPayLoad(token);
+        if(payload) {
+            const data = await user.findOne({ _id: payload.id });
+            res.render('change-password', {
+                data,
+            });
+        }
     }
 
     async UpdateChangPassword(req, res, next) {

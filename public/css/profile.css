@@ -19,7 +19,8 @@
           display: block; }
           .user_properties .user_profile .route_detail .show_user .-avatar img {
             border-radius: 50px;
-            width: 100%; }
+            width: 100%;
+            height: 100%; }
         .user_properties .user_profile .route_detail .show_user .-info {
           width: 100%;
           flex-direction: column;
@@ -62,21 +63,15 @@
           bottom: 0;
           left: 0;
           background-color: var(--tick); }
-      .user_properties .user_profile .show_content > div {
-        max-width: 550px;
-        min-width: 340px; }
-        .user_properties .user_profile .show_content > div .-info {
-          display: flex;
-          justify-content: space-between;
-          padding: 1rem 0;
-          margin: 1.5rem 0;
-          border-left: 4px solid var(--tick);
-          padding-left: 0.8rem; }
-          .user_properties .user_profile .show_content > div .-info .-edit {
-            cursor: pointer; }
-        .user_properties .user_profile .show_content > div .-content {
+      .user_properties .user_profile .show_content .information {
+        max-width: 540px;
+        min-width: 230px;
+        width: fit-content; }
+        .user_properties .user_profile .show_content .information .edit_profile {
+          margin: 10px 0; }
+        .user_properties .user_profile .show_content .information .-content {
           border: 2px solid var(--box-border);
-          padding: 1.5rem 2rem; }
-          .user_properties .user_profile .show_content > div .-content span {
+          border-radius: 5px; }
+          .user_properties .user_profile .show_content .information .-content span {
             display: block;
-            padding: 1rem 0; }
+            padding: 10px; }

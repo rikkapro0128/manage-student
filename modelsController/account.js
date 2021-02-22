@@ -14,6 +14,7 @@ const account = new Schema({
         age: { type: Number, default: 0 },
         gender: { type: String, default: 'Nam' },
         avatar: { type: String, default: '' },
+        lastModified: { type: Date, },
     },
 });
 

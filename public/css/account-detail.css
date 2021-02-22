@@ -1,17 +1,21 @@
-.-content .form-group_user {
-  display: flex;
-  flex-direction: column; }
-  .-content .form-group_user .title {
-    padding: 1rem 0; }
-  .-content .form-group_user .info {
-    font-size: 1.4rem;
-    padding: 0.6rem;
+.detail_account {
+  max-width: 500px; }
+  .detail_account .-content {
+    margin: 10px 0; }
+  .detail_account .update_profile {
+    border: 2px solid var(--box-border);
     border-radius: 5px;
-    border-color: transparent; }
-    .-content .form-group_user .info:focus {
-      border: 2px solid var(--hover-text); }
-  .-content .form-group_user .--gender {
-    padding: 0.6rem;
-    border-radius: 5px; }
-  .-content .form-group_user button {
-    margin: 1rem 0; }
+    padding: 1.5rem; }
+    .detail_account .update_profile .form-group_user {
+      display: flex;
+      flex-direction: column; }
+      .detail_account .update_profile .form-group_user label {
+        margin: 10px 0; }
+      .detail_account .update_profile .form-group_user input {
+        padding: 1rem 1rem;
+        font-size: 1.5rem;
+        border-radius: 50px;
+        width: inherit; }
+      .detail_account .update_profile .form-group_user select {
+        padding: 1rem 1rem;
+        border-radius: 50px; }
