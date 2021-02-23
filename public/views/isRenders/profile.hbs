@@ -68,19 +68,18 @@
             </div>
             <div class="show_content">
                 <h1 class="--title">THÔNG TIN CHUNG</h1>
-                <div class="information">
-                    <p class="edit_profile">
-                        <span class="-log">Thông tin tài khoản</span>
-                        <span class="-edit">
-                            Chỉnh sửa
-                            <i class="fas fa-pencil-alt"></i>
-                        </span>
-                    </p>
-                    <p class="-content">
-                        <span class="--user-name">Tên người dùng : {{ data.fullName }}</span>
-                        <span class="--email">Email : {{ data.email }}</span>
-                    </p>
-                </div>
+                {{#if profile}}
+                    {{> profile }}
+                {{/if}}
+                {{#if accountDetail}}
+                    {{> account-detail }}
+                {{/if}}
+                {{#if uploadStory}}
+                    {{> upload-story }}
+                {{/if}}
+                {{#if changePassword}}
+                    {{> change-password }}
+                {{/if}}
             </div>
         </div>
     </div>

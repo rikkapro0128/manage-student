@@ -13,6 +13,7 @@ class ControllerPrivate {
             const data = await user.findOne({ _id: payload.id });
             res.render('profile', {
                 data,
+                profile: true,
             });
         }
     }
@@ -21,8 +22,9 @@ class ControllerPrivate {
         const payload = handleToken.getPayLoad(token);
         if(payload) {
             const data = await user.findOne({ _id: payload.id });
-            res.render('account-detail', {
+            res.render('profile', {
                 data,
+                accountDetail: true,
             });
         }
     }
@@ -52,18 +54,19 @@ class ControllerPrivate {
         res.redirect('#');
     }
 
-    async changPassword(req, res, next) {
+    async changePassword(req, res, next) {
         const token = req.cookies.Authorization ? req.cookies.Authorization.split(' ')[1] : '';
         const payload = handleToken.getPayLoad(token);
         if(payload) {
             const data = await user.findOne({ _id: payload.id });
-            res.render('change-password', {
+            res.render('profile', {
                 data,
+                changePassword: true,
             });
         }
     }
 
-    async UpdateChangPassword(req, res, next) {
+    async UpdateChangePassword(req, res, next) {
         const validateUser = joi.object({
             oldPassword: joi.string().required().min(6).max(20),
             newPassword: joi.string().required().min(6).max(20),
@@ -97,8 +100,9 @@ class ControllerPrivate {
         const payload = handleToken.getPayLoad(token);
         if(payload) {
             const data = await user.findOne({ _id: payload.id });
-            res.render('upload-story', {
+            res.render('profile', {
                 data,
+                uploadStory: true,
             });
         }
     }
