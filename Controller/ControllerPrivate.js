@@ -92,6 +92,17 @@ class ControllerPrivate {
         })
     }
 
+    async uploadStory(req, res, next) {
+        const token = req.cookies.Authorization ? req.cookies.Authorization.split(' ')[1] : '';
+        const payload = handleToken.getPayLoad(token);
+        if(payload) {
+            const data = await user.findOne({ _id: payload.id });
+            res.render('upload-story', {
+                data,
+            });
+        }
+    }
+
 }
 
 module.exports = new ControllerPrivate;

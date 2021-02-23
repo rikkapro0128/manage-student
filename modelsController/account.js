@@ -15,6 +15,7 @@ const account = new Schema({
         gender: { type: String, default: 'Nam' },
         avatar: { type: String, default: '' },
         lastModified: { type: Date, },
+        typeUser: { type: String, enum: ['author', 'watcher'], default: 'watcher', require },
     },
 });
 
