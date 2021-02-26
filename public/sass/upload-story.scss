@@ -1,0 +1,32 @@
+.upload_story {
+    display: flex;
+    flex-direction: column;
+    .tittle_list-story {
+        font-size: 2rem;
+        padding: 1.5rem 0;
+    }
+    .--menu {
+        display: flex;
+        max-height: 42px;
+        display: flex;
+        align-items: center;
+        background-color: var(--dark-them);
+        width: 100%;
+        li {
+            padding: 1rem 1rem;
+            white-space: nowrap;
+        }
+        .-name-story {
+            min-width: 22.5rem;
+        }
+        .-state {
+            width: fit-content;
+        }
+        .-chapter-present {
+            width: fit-content;
+        }
+        .-time-up {
+            flex: 1;
+        }
+    }
+}

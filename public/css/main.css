@@ -4,6 +4,7 @@
 @import url("./base.css");
 @import url("./profile.css");
 @import url("./account-detail.css");
+@import url("./upload-story.css");
 .box_header {
   width: 100%;
   position: fixed;

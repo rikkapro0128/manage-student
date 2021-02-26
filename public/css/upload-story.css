@@ -1,0 +1,24 @@
+.upload_story {
+  display: flex;
+  flex-direction: column; }
+  .upload_story .tittle_list-story {
+    font-size: 2rem;
+    padding: 1.5rem 0; }
+  .upload_story .--menu {
+    display: flex;
+    max-height: 42px;
+    display: flex;
+    align-items: center;
+    background-color: var(--dark-them);
+    width: 100%; }
+    .upload_story .--menu li {
+      padding: 1rem 1rem;
+      white-space: nowrap; }
+    .upload_story .--menu .-name-story {
+      min-width: 22.5rem; }
+    .upload_story .--menu .-state {
+      width: fit-content; }
+    .upload_story .--menu .-chapter-present {
+      width: fit-content; }
+    .upload_story .--menu .-time-up {
+      flex: 1; }

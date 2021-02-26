@@ -200,3 +200,17 @@ body {
     box-shadow: 1px 1px #ccc;
     cursor: pointer;
 }
+
+.btn-add:hover {
+    background-color: var(--hover-text);
+    transition: all 0.2s linear;
+    cursor: pointer;
+}
+
+.background-green {
+    background-color: var(--primary);
+}
+
+.border-left-btn {
+    border-left: 1px solid var(--box-border);
+}
