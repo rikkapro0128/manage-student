@@ -100,11 +100,30 @@ class ControllerPrivate {
         const payload = handleToken.getPayLoad(token);
         if(payload) {
             const data = await user.findOne({ _id: payload.id });
-            res.render('profile', {
-                data,
-                uploadStory: true,
+            if(data.infoAccount.typeUser === 'watcher') {
+                res.render('profile', {
+                    data,
+                    registrationAuthor: true,
+                });
+            }
+            else if(data.infoAccount.typeUser === 'author') {
+                res.render('profile', {
+                    data,
+                    uploadStory: true,
+                });
+            }
+        }
+    }
+
+    async acceptMakeUser(req, res, next) {
+        const token = req.cookies.Authorization ? req.cookies.Authorization.split(' ')[1] : '';
+        const payload = handleToken.getPayLoad(token);
+        if(payload) {
+            await user.findOneAndUpdate({ _id: payload.id }, {
+                'infoAccount.typeUser': req.body.changeUser,
             });
         }
+        res.json({ isSucess: true });
     }
 
 }
