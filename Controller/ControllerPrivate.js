@@ -115,6 +115,26 @@ class ControllerPrivate {
         }
     }
 
+    async addStory(req, res, next) {
+        const token = req.cookies.Authorization ? req.cookies.Authorization.split(' ')[1] : '';
+        const payload = handleToken.getPayLoad(token);
+        if(payload) {
+            const data = await user.findOne({ _id: payload.id });
+            if(data.infoAccount.typeUser === 'watcher') {
+                res.render('profile', {
+                    data,
+                    registrationAuthor: true,
+                });
+            }
+            else if(data.infoAccount.typeUser === 'author') {
+                res.render('profile', {
+                    data,
+                    addStory: true,
+                });
+            }
+        }
+    }
+
     async acceptMakeUser(req, res, next) {
         const token = req.cookies.Authorization ? req.cookies.Authorization.split(' ')[1] : '';
         const payload = handleToken.getPayLoad(token);

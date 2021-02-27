@@ -33,7 +33,7 @@
                             Truyện đã theo dõi
                         </a>
                     </li>
-                    <li class="--item {{ getTick registrationAuthor uploadStory }}">
+                    <li class="--item {{ getTick registrationAuthor uploadStory addStory }}">
                         <a href="/private/upload-story">
                             <i class="fas fa-list-ul"></i>
                             Truyện đã đăng
@@ -82,6 +82,9 @@
                     {{/if}}
                     {{#if uploadStory}}
                     {{> upload-story }}
+                    {{/if}}
+                    {{#if addStory}}
+                    {{> add-story }}
                     {{/if}}
                 {{!-- block upload story and change permisstion is author/wacher --}}
 

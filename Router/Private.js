@@ -8,6 +8,7 @@ router.get('/profile', ControllerPrivate.profile);
 router.get('/account-detail', ControllerPrivate.accountDetail);
 router.get('/change-password', ControllerPrivate.changePassword);
 router.get('/upload-story', ControllerPrivate.uploadStory);
+router.get('/upload-story/add', ControllerPrivate.addStory);
 router.post('/accept-make-author', ControllerPrivate.acceptMakeUser);
 router.patch('/change-password', ControllerPrivate.UpdateChangePassword);
 router.patch('/account-detail', upload.single('avatar'), ControllerPrivate.updateAccountDetail);

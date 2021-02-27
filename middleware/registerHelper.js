@@ -27,8 +27,8 @@ module.exports = function(hbs) {
             return data.fullName;
         }
     });
-    hbs.registerHelper('getTick', function(registration, uploadStory) {
-        return registration | uploadStory ? 'tick' : '';
+    hbs.registerHelper('getTick', function(registration, uploadStory, addStory) {
+        return registration | uploadStory | addStory ? 'tick' : '';
     });
 
 }

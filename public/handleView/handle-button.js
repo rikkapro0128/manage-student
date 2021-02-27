@@ -50,4 +50,8 @@ export function handleButton() {
             console.error('Error:', error);
         });
     })
+
+    $('#add-story').click(function() {
+        location.href = 'http://localhost:19436/private/upload-story/add';
+    })
 }
