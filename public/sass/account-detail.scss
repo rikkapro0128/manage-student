@@ -7,22 +7,5 @@
         border: 2px solid var(--box-border);
         border-radius: 5px;
         padding: 1.5rem;
-        .form-group_user {
-            display: flex;
-            flex-direction: column;
-            label {
-                margin: 10px 0;
-            }
-            input {
-                padding: 1rem 1rem;
-                font-size: 1.5rem;
-                border-radius: 50px;
-                width: inherit;
-            }
-            select {
-                padding: 1rem 1rem;
-                border-radius: 50px;
-            }
-        }
     }
 }

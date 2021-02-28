@@ -6,7 +6,7 @@ const storys = new Schema({
     name: { type: String, },
     state: { type: String, },
     chapterPresent: { type: Number, },
-    updateStory: { type: Date, default: Date.now, },
+    updateStory: { type: Date, },
     listChapter: [{
         chapter: { type: Number, }, 
         picture: [{

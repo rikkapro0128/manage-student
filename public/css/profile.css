@@ -75,3 +75,17 @@
           .user_properties .user_profile .show_content .information .-content span {
             display: block;
             padding: 10px; }
+
+.form-group_user {
+  display: flex;
+  flex-direction: column; }
+  .form-group_user label {
+    margin: 10px 0; }
+  .form-group_user input {
+    padding: 1rem 1rem;
+    font-size: 1.5rem;
+    border-radius: 50px;
+    width: inherit; }
+  .form-group_user select {
+    padding: 1rem 1rem;
+    border-radius: 50px; }

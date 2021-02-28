@@ -104,3 +104,21 @@
         }
     }
 }
+
+.form-group_user {
+    display: flex;
+    flex-direction: column;
+    label {
+        margin: 10px 0;
+    }
+    input {
+        padding: 1rem 1rem;
+        font-size: 1.5rem;
+        border-radius: 50px;
+        width: inherit;
+    }
+    select {
+        padding: 1rem 1rem;
+        border-radius: 50px;
+    }
+}

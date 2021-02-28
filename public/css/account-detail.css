@@ -6,16 +6,3 @@
     border: 2px solid var(--box-border);
     border-radius: 5px;
     padding: 1.5rem; }
-    .detail_account .update_profile .form-group_user {
-      display: flex;
-      flex-direction: column; }
-      .detail_account .update_profile .form-group_user label {
-        margin: 10px 0; }
-      .detail_account .update_profile .form-group_user input {
-        padding: 1rem 1rem;
-        font-size: 1.5rem;
-        border-radius: 50px;
-        width: inherit; }
-      .detail_account .update_profile .form-group_user select {
-        padding: 1rem 1rem;
-        border-radius: 50px; }

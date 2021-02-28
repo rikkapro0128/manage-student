@@ -1,248 +1,259 @@
 <div class="add_story">
-    <div class="form-group_user">
-        <label for="" class="title">Tên truyện</label>
-        <input type="text" class="info">
+    <div class="--info">
+        <div class="form-group_user">
+            <label for="" class="title">Tên truyện</label>
+            <input type="text" class="info name_story" name="nameStory" required>
+        </div>
+        <div class="author__category">
+            <div class="form-group_user">
+                <label for="" class="title">Tác giả</label>
+                <input type="text" class="info name_author" name="nameAuthor" required>
+            </div>
+            <div class="form-group_user">
+                <label for="" class="title">Loại truyện</label>
+                <select class="type_story" name="typeStory" id="">
+                    <option value="storyCompose">Truyện sáng tác</option>
+                    <option value="storyTranslate" selected>Truyện dịch</option>
+                </select>
+            </div>
+        </div>
+        <button class="btn" id="create_story">Tạo truyện mới</button>
     </div>
-    <div class="form-group_user">
-        <label for="" class="title">Tác giả</label>
-        <input type="text" class="info">
+    <div class="cover_story">
+        <div class="form-group_user">
+            <label for="">Chọn ảnh bìa</label>
+            <input type="file" name="coverImage" class="cover_image" id="">
+        </div>
     </div>
-    <div class="form-group_user">
-        <label for="" class="title">Loại truyện</label>
-        <select name="type-story" id="">
-            <option value="story-compose">Truyện sáng tác</option>
-            <option value="story-translate">Truyện dịch</option>
-        </select>
-    </div>
-    <div class="form-group_user">
+    <div class="--category">
         <label for="" class="title">Thể loại truyện</label>
         <div class="checkbox-list">
-            <div class="custom-control custom-checkbox">
+            <div class="custom-checkbox">
                 <input type="checkbox" value="1" name="categories[]" class="custom-control-input"
                     id="category-checkbox1">
                 <label class="custom-control-label" for="category-checkbox1">Tiên hiệp</label>
             </div>
-            <div class="custom-control custom-checkbox">
+            <div class="custom-checkbox">
                 <input type="checkbox" value="2" name="categories[]" class="custom-control-input"
                     id="category-checkbox2">
                 <label class="custom-control-label" for="category-checkbox2">Kiếm hiệp</label>
             </div>
-            <div class="custom-control custom-checkbox">
+            <div class="custom-checkbox">
                 <input type="checkbox" value="3" name="categories[]" class="custom-control-input"
                     id="category-checkbox3">
                 <label class="custom-control-label" for="category-checkbox3">Truyện Sắc</label>
             </div>
-            <div class="custom-control custom-checkbox">
+            <div class="custom-checkbox">
                 <input type="checkbox" value="4" name="categories[]" class="custom-control-input"
                     id="category-checkbox4">
                 <label class="custom-control-label" for="category-checkbox4">Đô thị</label>
             </div>
-            <div class="custom-control custom-checkbox">
+            <div class="custom-checkbox">
                 <input type="checkbox" value="5" name="categories[]" class="custom-control-input"
                     id="category-checkbox5">
                 <label class="custom-control-label" for="category-checkbox5">Truyện Khác</label>
             </div>
-            <div class="custom-control custom-checkbox">
+            <div class="custom-checkbox">
                 <input type="checkbox" value="6" name="categories[]" class="custom-control-input"
                     id="category-checkbox6">
                 <label class="custom-control-label" for="category-checkbox6">Lịch sử</label>
             </div>
-            <div class="custom-control custom-checkbox">
+            <div class="custom-checkbox">
                 <input type="checkbox" value="7" name="categories[]" class="custom-control-input"
                     id="category-checkbox7">
                 <label class="custom-control-label" for="category-checkbox7">Khoa học</label>
             </div>
-            <div class="custom-control custom-checkbox">
+            <div class="custom-checkbox">
                 <input type="checkbox" value="8" name="categories[]" class="custom-control-input"
                     id="category-checkbox8">
                 <label class="custom-control-label" for="category-checkbox8">Quân sự</label>
             </div>
-            <div class="custom-control custom-checkbox">
+            <div class="custom-checkbox">
                 <input type="checkbox" value="9" name="categories[]" class="custom-control-input"
                     id="category-checkbox9">
                 <label class="custom-control-label" for="category-checkbox9">Võng Du</label>
             </div>
-            <div class="custom-control custom-checkbox">
+            <div class="custom-checkbox">
                 <input type="checkbox" value="10" name="categories[]" class="custom-control-input"
                     id="category-checkbox10">
                 <label class="custom-control-label" for="category-checkbox10">Dị Giới</label>
             </div>
-            <div class="custom-control custom-checkbox">
+            <div class="custom-checkbox">
                 <input type="checkbox" value="11" name="categories[]" class="custom-control-input"
                     id="category-checkbox11">
                 <label class="custom-control-label" for="category-checkbox11">Huyền Huyễn</label>
             </div>
-            <div class="custom-control custom-checkbox">
+            <div class="custom-checkbox">
                 <input type="checkbox" value="12" name="categories[]" class="custom-control-input"
                     id="category-checkbox12">
                 <label class="custom-control-label" for="category-checkbox12">Khoa Huyễn</label>
             </div>
-            <div class="custom-control custom-checkbox">
+            <div class="custom-checkbox">
                 <input type="checkbox" value="13" name="categories[]" class="custom-control-input"
                     id="category-checkbox13">
                 <label class="custom-control-label" for="category-checkbox13">Ngôn Tình</label>
             </div>
-            <div class="custom-control custom-checkbox">
+            <div class="custom-checkbox">
                 <input type="checkbox" value="14" name="categories[]" class="custom-control-input"
                     id="category-checkbox14">
                 <label class="custom-control-label" for="category-checkbox14">Truyện Teen</label>
             </div>
-            <div class="custom-control custom-checkbox">
+            <div class="custom-checkbox">
                 <input type="checkbox" value="18" name="categories[]" class="custom-control-input"
                     id="category-checkbox18">
                 <label class="custom-control-label" for="category-checkbox18">Xuyên Không</label>
             </div>
-            <div class="custom-control custom-checkbox">
+            <div class="custom-checkbox">
                 <input type="checkbox" value="19" name="categories[]" class="custom-control-input"
                     id="category-checkbox19">
                 <label class="custom-control-label" for="category-checkbox19">Truyện ma</label>
             </div>
-            <div class="custom-control custom-checkbox">
+            <div class="custom-checkbox">
                 <input type="checkbox" value="20" name="categories[]" class="custom-control-input"
                     id="category-checkbox20">
                 <label class="custom-control-label" for="category-checkbox20">Truyện trinh thám</label>
             </div>
-            <div class="custom-control custom-checkbox">
+            <div class="custom-checkbox">
                 <input type="checkbox" value="21" name="categories[]" class="custom-control-input"
                     id="category-checkbox21">
                 <label class="custom-control-label" for="category-checkbox21">Truyện Ngắn</label>
             </div>
-            <div class="custom-control custom-checkbox">
+            <div class="custom-checkbox">
                 <input type="checkbox" value="22" name="categories[]" class="custom-control-input"
                     id="category-checkbox22">
                 <label class="custom-control-label" for="category-checkbox22">Truyện Cười</label>
             </div>
-            <div class="custom-control custom-checkbox">
+            <div class="custom-checkbox">
                 <input type="checkbox" value="23" name="categories[]" class="custom-control-input"
                     id="category-checkbox23">
                 <label class="custom-control-label" for="category-checkbox23">Tiểu thuyết</label>
             </div>
-            <div class="custom-control custom-checkbox">
+            <div class="custom-checkbox">
                 <input type="checkbox" value="24" name="categories[]" class="custom-control-input"
                     id="category-checkbox24">
                 <label class="custom-control-label" for="category-checkbox24">Hệ thống</label>
             </div>
-            <div class="custom-control custom-checkbox">
+            <div class="custom-checkbox">
                 <input type="checkbox" value="25" name="categories[]" class="custom-control-input"
                     id="category-checkbox25">
                 <label class="custom-control-label" for="category-checkbox25">Đam Mỹ</label>
             </div>
-            <div class="custom-control custom-checkbox">
+            <div class="custom-checkbox">
                 <input type="checkbox" value="26" name="categories[]" class="custom-control-input"
                     id="category-checkbox26">
                 <label class="custom-control-label" for="category-checkbox26">Quan Trường</label>
             </div>
-            <div class="custom-control custom-checkbox">
+            <div class="custom-checkbox">
                 <input type="checkbox" value="27" name="categories[]" class="custom-control-input"
                     id="category-checkbox27">
                 <label class="custom-control-label" for="category-checkbox27">Xuyên Nhanh</label>
             </div>
-            <div class="custom-control custom-checkbox">
+            <div class="custom-checkbox">
                 <input type="checkbox" value="28" name="categories[]" class="custom-control-input"
                     id="category-checkbox28">
                 <label class="custom-control-label" for="category-checkbox28">Dị Năng</label>
             </div>
-            <div class="custom-control custom-checkbox">
+            <div class="custom-checkbox">
                 <input type="checkbox" value="29" name="categories[]" class="custom-control-input"
                     id="category-checkbox29">
                 <label class="custom-control-label" for="category-checkbox29">Trọng Sinh</label>
             </div>
-            <div class="custom-control custom-checkbox">
+            <div class="custom-checkbox">
                 <input type="checkbox" value="30" name="categories[]" class="custom-control-input"
                     id="category-checkbox30">
                 <label class="custom-control-label" for="category-checkbox30">Thám Hiểm</label>
             </div>
-            <div class="custom-control custom-checkbox">
+            <div class="custom-checkbox">
                 <input type="checkbox" value="31" name="categories[]" class="custom-control-input"
                     id="category-checkbox31">
                 <label class="custom-control-label" for="category-checkbox31">Linh Dị</label>
             </div>
-            <div class="custom-control custom-checkbox">
+            <div class="custom-checkbox">
                 <input type="checkbox" value="32" name="categories[]" class="custom-control-input"
                     id="category-checkbox32">
                 <label class="custom-control-label" for="category-checkbox32">Truyện Ngược</label>
             </div>
-            <div class="custom-control custom-checkbox">
+            <div class="custom-checkbox">
                 <input type="checkbox" value="33" name="categories[]" class="custom-control-input"
                     id="category-checkbox33">
                 <label class="custom-control-label" for="category-checkbox33">Truyện Sủng</label>
             </div>
-            <div class="custom-control custom-checkbox">
+            <div class="custom-checkbox">
                 <input type="checkbox" value="34" name="categories[]" class="custom-control-input"
                     id="category-checkbox34">
                 <label class="custom-control-label" for="category-checkbox34">Cung Đấu</label>
             </div>
-            <div class="custom-control custom-checkbox">
+            <div class="custom-checkbox">
                 <input type="checkbox" value="35" name="categories[]" class="custom-control-input"
                     id="category-checkbox35">
                 <label class="custom-control-label" for="category-checkbox35">Nữ Cường</label>
             </div>
-            <div class="custom-control custom-checkbox">
+            <div class="custom-checkbox">
                 <input type="checkbox" value="36" name="categories[]" class="custom-control-input"
                     id="category-checkbox36">
                 <label class="custom-control-label" for="category-checkbox36">Gia Đấu</label>
             </div>
-            <div class="custom-control custom-checkbox">
+            <div class="custom-checkbox">
                 <input type="checkbox" value="37" name="categories[]" class="custom-control-input"
                     id="category-checkbox37">
                 <label class="custom-control-label" for="category-checkbox37">Đông Phương</label>
             </div>
-            <div class="custom-control custom-checkbox">
+            <div class="custom-checkbox">
                 <input type="checkbox" value="38" name="categories[]" class="custom-control-input"
                     id="category-checkbox38">
                 <label class="custom-control-label" for="category-checkbox38">Bách Hợp</label>
             </div>
-            <div class="custom-control custom-checkbox">
+            <div class="custom-checkbox">
                 <input type="checkbox" value="39" name="categories[]" class="custom-control-input"
                     id="category-checkbox39">
                 <label class="custom-control-label" for="category-checkbox39">Hài Hước</label>
             </div>
-            <div class="custom-control custom-checkbox">
+            <div class="custom-checkbox">
                 <input type="checkbox" value="40" name="categories[]" class="custom-control-input"
                     id="category-checkbox40">
                 <label class="custom-control-label" for="category-checkbox40">Điền Văn</label>
             </div>
-            <div class="custom-control custom-checkbox">
+            <div class="custom-checkbox">
                 <input type="checkbox" value="41" name="categories[]" class="custom-control-input"
                     id="category-checkbox41">
                 <label class="custom-control-label" for="category-checkbox41">Cổ Đại</label>
             </div>
-            <div class="custom-control custom-checkbox">
+            <div class="custom-checkbox">
                 <input type="checkbox" value="42" name="categories[]" class="custom-control-input"
                     id="category-checkbox42">
                 <label class="custom-control-label" for="category-checkbox42">Mạt Thế</label>
             </div>
-            <div class="custom-control custom-checkbox">
+            <div class="custom-checkbox">
                 <input type="checkbox" value="43" name="categories[]" class="custom-control-input"
                     id="category-checkbox43">
                 <label class="custom-control-label" for="category-checkbox43">Phương Tây</label>
             </div>
-            <div class="custom-control custom-checkbox">
+            <div class="custom-checkbox">
                 <input type="checkbox" value="44" name="categories[]" class="custom-control-input"
                     id="category-checkbox44">
                 <label class="custom-control-label" for="category-checkbox44">Nữ Phụ</label>
             </div>
-            <div class="custom-control custom-checkbox">
+            <div class="custom-checkbox">
                 <input type="checkbox" value="45" name="categories[]" class="custom-control-input"
                     id="category-checkbox45">
                 <label class="custom-control-label" for="category-checkbox45">Light Novel</label>
             </div>
-            <div class="custom-control custom-checkbox">
+            <div class="custom-checkbox">
                 <input type="checkbox" value="46" name="categories[]" class="custom-control-input"
                     id="category-checkbox46">
                 <label class="custom-control-label" for="category-checkbox46">Việt Nam</label>
             </div>
-            <div class="custom-control custom-checkbox">
+            <div class="custom-checkbox">
                 <input type="checkbox" value="47" name="categories[]" class="custom-control-input"
                     id="category-checkbox47">
                 <label class="custom-control-label" for="category-checkbox47">Đoản Văn</label>
             </div>
-            <div class="custom-control custom-checkbox">
+            <div class="custom-checkbox">
                 <input type="checkbox" value="48" name="categories[]" class="custom-control-input"
                     id="category-checkbox48">
                 <label class="custom-control-label" for="category-checkbox48">Đồng Nhân</label>
             </div>
-            <div class="custom-control custom-checkbox">
+            <div class="custom-checkbox">
                 <input type="checkbox" value="49" name="categories[]" class="custom-control-input"
                     id="category-checkbox49">
                 <label class="custom-control-label" for="category-checkbox49">Hiện Đại</label>

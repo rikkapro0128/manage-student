@@ -135,6 +135,31 @@ class ControllerPrivate {
         }
     }
 
+    async createStory(req, res, next) {
+        // const token = req.cookies.Authorization ? req.cookies.Authorization.split(' ')[1] : '';
+        // const payload = handleToken.getPayLoad(token);
+        // if(req.file) {
+        //     req.body.avatar = '/' + req.file.path.split('\\').slice(1).join('/');
+        //     await user.findOneAndUpdate({ _id: payload.id }, { 
+        //         $set: { 
+        //             infoAccount: req.body,
+        //             'infoAccount.lastModified': new Date,
+        //         },
+        //     });
+        // }else {
+        //     await user.findOneAndUpdate({ _id: payload.id }, { 
+        //         $set: { 
+        //             'infoAccount.firstName': req.body.firstName,
+        //             'infoAccount.lastName': req.body.lastName,
+        //             'infoAccount.age': req.body.age,
+        //             'infoAccount.gender': req.body.gender,
+        //             'infoAccount.lastModified': new Date,
+        //         },
+        //     });
+        // }
+        // res.redirect('#');
+    }
+
     async acceptMakeUser(req, res, next) {
         const token = req.cookies.Authorization ? req.cookies.Authorization.split(' ')[1] : '';
         const payload = handleToken.getPayLoad(token);

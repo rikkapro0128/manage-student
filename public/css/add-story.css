@@ -1,0 +1,28 @@
+.add_story {
+  border: 2px solid var(--box-border);
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 1rem; }
+  .add_story .--info .author__category {
+    display: flex; }
+  .add_story .--info > div {
+    padding: 0.7rem 0; }
+  .add_story .--info button {
+    margin: 2rem 0; }
+  .add_story .cover_story {
+    width: 220px; }
+  .add_story .--category .title {
+    font-size: 1.6rem; }
+  .add_story .--category .checkbox-list {
+    height: 34rem;
+    width: 30rem;
+    overflow-y: scroll;
+    background-color: var(--dark-them);
+    border: 2px solid var(--hover-btn); }
+    .add_story .--category .checkbox-list .custom-checkbox {
+      font-size: 1.6rem;
+      height: 3rem;
+      display: flex;
+      align-items: center; }
+      .add_story .--category .checkbox-list .custom-checkbox:hover {
+        background-color: var(--hover-btn); }
