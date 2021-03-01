@@ -5,28 +5,57 @@
         font-size: 2rem;
         padding: 1.5rem 0;
     }
-    .--menu {
-        display: flex;
-        max-height: 42px;
-        display: flex;
-        align-items: center;
-        background-color: var(--dark-them);
-        width: 100%;
-        li {
-            padding: 1rem 1rem;
-            white-space: nowrap;
+    .table_story {
+        border: 1px solid var(--box-border);
+        ul:not(:first-child) {
+            border-top: 1px solid var(--box-border);
         }
-        .-name-story {
-            min-width: 22.5rem;
-        }
-        .-state {
-            width: fit-content;
-        }
-        .-chapter-present {
-            width: fit-content;
-        }
-        .-time-up {
-            flex: 1;
+        .--menu, .--story {
+            display: flex;
+            max-height: 42px;
+            display: flex;
+            align-items: center;
+            background-color: var(--dark-them);
+            width: 100%;
+            li {
+                padding: 1rem 1rem;
+                white-space: nowrap;
+                input {
+                    width: 100%;
+                    height: 100%;
+                    background-color: var(--dark-them);
+                    border: none;
+                    font-size: 1.5rem;
+                    color: var(--text-primary);
+                }
+            }
+            .-name-story {
+                width: 22.5rem;
+            }
+            .-state {
+                width: 10rem;
+            }
+            .-chapter-present {
+                width: 14rem;
+            }
+            .-time-up {
+                width: 20rem;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+            }
+            .-edit-story {
+                flex: 1;
+                color: var(--edit);
+            }
+            .-add-story {
+                flex: 1;
+                color: var(--add)
+            }
+            .-remove-story {
+                flex: 1;
+                color: var(--delete);
+            }
         }
     }
 }

@@ -4,21 +4,44 @@
   .upload_story .tittle_list-story {
     font-size: 2rem;
     padding: 1.5rem 0; }
-  .upload_story .--menu {
-    display: flex;
-    max-height: 42px;
-    display: flex;
-    align-items: center;
-    background-color: var(--dark-them);
-    width: 100%; }
-    .upload_story .--menu li {
-      padding: 1rem 1rem;
-      white-space: nowrap; }
-    .upload_story .--menu .-name-story {
-      min-width: 22.5rem; }
-    .upload_story .--menu .-state {
-      width: fit-content; }
-    .upload_story .--menu .-chapter-present {
-      width: fit-content; }
-    .upload_story .--menu .-time-up {
-      flex: 1; }
+  .upload_story .table_story {
+    border: 1px solid var(--box-border); }
+    .upload_story .table_story ul:not(:first-child) {
+      border-top: 1px solid var(--box-border); }
+    .upload_story .table_story .--menu, .upload_story .table_story .--story {
+      display: flex;
+      max-height: 42px;
+      display: flex;
+      align-items: center;
+      background-color: var(--dark-them);
+      width: 100%; }
+      .upload_story .table_story .--menu li, .upload_story .table_story .--story li {
+        padding: 1rem 1rem;
+        white-space: nowrap; }
+        .upload_story .table_story .--menu li input, .upload_story .table_story .--story li input {
+          width: 100%;
+          height: 100%;
+          background-color: var(--dark-them);
+          border: none;
+          font-size: 1.5rem;
+          color: var(--text-primary); }
+      .upload_story .table_story .--menu .-name-story, .upload_story .table_story .--story .-name-story {
+        width: 22.5rem; }
+      .upload_story .table_story .--menu .-state, .upload_story .table_story .--story .-state {
+        width: 10rem; }
+      .upload_story .table_story .--menu .-chapter-present, .upload_story .table_story .--story .-chapter-present {
+        width: 14rem; }
+      .upload_story .table_story .--menu .-time-up, .upload_story .table_story .--story .-time-up {
+        width: 20rem;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis; }
+      .upload_story .table_story .--menu .-edit-story, .upload_story .table_story .--story .-edit-story {
+        flex: 1;
+        color: var(--edit); }
+      .upload_story .table_story .--menu .-add-story, .upload_story .table_story .--story .-add-story {
+        flex: 1;
+        color: var(--add); }
+      .upload_story .table_story .--menu .-remove-story, .upload_story .table_story .--story .-remove-story {
+        flex: 1;
+        color: var(--delete); }
