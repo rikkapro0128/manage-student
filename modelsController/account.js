@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const { storys } = require('./subSchems.js');
+const { story } = require('./subSchems.js');
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
 
@@ -17,7 +17,7 @@ const account = new Schema({
         lastModified: { type: Date, },
         typeUser: { type: String, enum: ['author', 'watcher'], default: 'watcher', require },
     },
-    story: [storys],
+    storys: [story],
 });
 
 account.pre('save', async function() {

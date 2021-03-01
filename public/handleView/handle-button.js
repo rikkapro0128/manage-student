@@ -92,15 +92,16 @@ export function handleButton() {
       }
     });
   });
-  fileField.addEventListener('change', function (event) {
-    formData.append('coverImage', fileField.files[0]);
-    console.log('change')
-  });
+  // fileField.addEventListener('change', function (event) {
+  //   formData.append('coverImage', fileField.files[0]);
+  // });
   $("#create_story").click(function () {
-    formData.append("addStory", JSON.stringify(addStory));
     fetch("http://localhost:19436/private/upload-story/add", {
       method: "POST",
-      body: formData,
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(addStory),
     })
     .then((response) => response.json())
     .then((result) => {

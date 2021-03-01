@@ -1,19 +1,20 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const storys = new Schema({
-    _id: Schema.Types.ObjectId,
-    name: { type: String, },
-    state: { type: String, },
-    chapterPresent: { type: Number, },
-    updateStory: { type: Date, },
+const story = new Schema({
+    nameStory: { type: String, default: '' },
+    nameAuthor: { type: String, default: '' },
+    typeStory: { type: String, default: '' },
+    categories: [{ type: String, }],
+    state: { type: String, enum: ['approve', 'not approve'], default: 'not approve' },
+    chapterPresent: { type: Number, default: 0 },
+    updateStory: { type: Date, default: new Date },
     listChapter: [{
-        chapter: { type: Number, }, 
+        chapter: { type: Number, default: 0 }, 
         picture: [{
-            _id: Schema.Types.ObjectId,
             path: { type: String, }
         }],
     }]
 })
 
-module.exports = { storys };
+module.exports = { story };
