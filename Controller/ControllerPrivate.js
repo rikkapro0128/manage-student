@@ -147,14 +147,34 @@ class ControllerPrivate {
             //     },
             // });
         }else {
-            console.log(req.body)
             await user.findOneAndUpdate({ _id: payload.id }, {
                 $push: {
                     storys: req.body,
                 }
+            }).then(function() {
+                res.json({ isSucess: true });
+                next();
             })
         }
-        res.redirect('#');
+        // res.redirect('#');
+    }
+
+    async deleteStory(req, res, next) {
+        const token = req.cookies.Authorization ? req.cookies.Authorization.split(' ')[1] : '';
+        const payload = handleToken.getPayLoad(token);
+        // console.log('Access router delete coures');
+        // console.log(req.body.deleteStory)
+        if(payload) {
+            await user.findOneAndUpdate({ _id: payload.id }, {
+                $pull: {
+                    'storys': { _id: req.body.deleteStory }
+                }
+            })
+            .then(function() {
+                res.json({ isSucess: true });
+                next();
+            })
+        }
     }
 
     async acceptMakeUser(req, res, next) {

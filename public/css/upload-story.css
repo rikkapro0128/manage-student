@@ -26,22 +26,28 @@
           font-size: 1.5rem;
           color: var(--text-primary); }
       .upload_story .table_story .--menu .-name-story, .upload_story .table_story .--story .-name-story {
-        width: 22.5rem; }
+        width: 14.5rem;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis; }
       .upload_story .table_story .--menu .-state, .upload_story .table_story .--story .-state {
-        width: 10rem; }
+        width: 9.5rem; }
       .upload_story .table_story .--menu .-chapter-present, .upload_story .table_story .--story .-chapter-present {
-        width: 14rem; }
+        width: 8.5rem; }
       .upload_story .table_story .--menu .-time-up, .upload_story .table_story .--story .-time-up {
         width: 20rem;
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis; }
       .upload_story .table_story .--menu .-edit-story, .upload_story .table_story .--story .-edit-story {
-        flex: 1;
+        width: 10rem;
         color: var(--edit); }
       .upload_story .table_story .--menu .-add-story, .upload_story .table_story .--story .-add-story {
-        flex: 1;
-        color: var(--add); }
+        width: 18rem;
+        color: var(--add-story); }
       .upload_story .table_story .--menu .-remove-story, .upload_story .table_story .--story .-remove-story {
-        flex: 1;
+        width: calc(18rem - 12rem);
         color: var(--delete); }
+      .upload_story .table_story .--menu .-add-chapter, .upload_story .table_story .--story .-add-chapter {
+        flex: 1;
+        color: var(--add-chapter); }

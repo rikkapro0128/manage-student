@@ -12,7 +12,7 @@
             </li>
             <li class="-chapter-present border-left-btn">
                 <i class="fas fa-book-open"></i>
-                Chapter hiện tại
+                Chapter
             </li>
             <li class="-time-up border-left-btn">
                 <i class="fas fa-pencil-alt"></i>
@@ -20,30 +20,38 @@
             </li>
             <li class="-add-story background btn-add border-left-btn" id="add-story">
                 <i class="fas fa-plus"></i>
-                Thêm truyện mới
+                truyện mới
+            </li>
+            <li class="-add-chapter border-left-btn">
+                {{!-- <i class="fas fa-plus"></i>
+                chapter --}}
             </li>
         </ul>
         {{#each data.storys}}
-            <ul class="--story">
+            <ul class="--story" id_story="{{this._id}}">
                 <li class="-name-story">
-                    <input type="text" value="{{this.nameStory}}" disabled>
+                    {{this.nameStory}}
                 </li>
                 <li class="-state border-left-btn">
-                    <input type="text" value="{{this.state}}" disabled>
+                    {{this.state}}
                 </li>
                 <li class="-chapter-present border-left-btn">
-                    <input type="text" value="{{this.chapterPresent}}" disabled>
+                    {{this.chapterPresent}}
                 </li>
                 <li class="-time-up border-left-btn">
-                    <input type="text" value="{{this.updateStory}}" disabled>
+                    {{this.updateStory}}
                 </li>
-                <li class="-edit-story background btn-add border-left-btn" id="edit-story">
+                <li class="-edit-story background btn-add border-left-btn" id="edit_story">
                     <i class="far fa-edit"></i>
                     Chỉnh sửa
                 </li>
-                <li class="-remove-story background btn-add border-left-btn" id="edit-story">
+                <li class="-remove-story background btn-add border-left-btn delete" id="delete_story">
                     <i class="far fa-trash-alt"></i>
                     Xoá
+                </li>
+                <li class="-add-chapter border-left-btn btn-add">
+                    <i class="fas fa-plus"></i>
+                    chapter
                 </li>
             </ul>
         {{/each}}

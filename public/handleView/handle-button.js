@@ -62,9 +62,9 @@ export function handleButton() {
   const typeStory = $('.type_story[name="typeStory"]');
   const nodeLists = $('.custom-control-input[name="categories[]"]');
   const categories = Array.from(nodeLists);
+  const deleteStory = Array.from($('#delete_story.delete'));
   // const fileField = $('.cover_image[type="file"]');
   const fileField = document.querySelector('.cover_image[type="file"]');
-  const formData = new FormData();
   const addStory = {
     nameStory: "",
     nameAuthor: "",
@@ -104,11 +104,53 @@ export function handleButton() {
       body: JSON.stringify(addStory),
     })
     .then((response) => response.json())
-    .then((result) => {
-      console.log("Success:", result);
+    .then((data) => {
+      if (data.isSucess) {
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: "Tạo thành công rồi bạn ơi!",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      }
+      setTimeout(() => {
+        location.reload();
+      }, 2000);
     })
     .catch((error) => {
       console.error("Error:", error);
     });
   });
+
+  deleteStory.forEach((element) => {
+    $(element).click(function() {
+      console.log('click')
+      fetch("http://localhost:19436/private/upload-story/delete?_method=DELETE", {
+        method: "POST",
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({deleteStory: $(this).parent('ul').attr('id_story')}),
+      })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.isSucess) {
+          Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Xóa thành công rồi bạn ơi!",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+        }
+        setTimeout(() => {
+          location.reload();
+        }, 2000);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+    })
+  })
 }

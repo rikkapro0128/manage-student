@@ -30,13 +30,16 @@
                 }
             }
             .-name-story {
-                width: 22.5rem;
+                width: 14.5rem;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
             }
             .-state {
-                width: 10rem;
+                width: 9.5rem;
             }
             .-chapter-present {
-                width: 14rem;
+                width: 8.5rem;
             }
             .-time-up {
                 width: 20rem;
@@ -45,16 +48,20 @@
                 text-overflow: ellipsis;
             }
             .-edit-story {
-                flex: 1;
+                width: 10rem;
                 color: var(--edit);
             }
             .-add-story {
-                flex: 1;
-                color: var(--add)
+                width: 18rem;
+                color: var(--add-story)
             }
             .-remove-story {
-                flex: 1;
+                width: calc(18rem - 12rem);
                 color: var(--delete);
+            }
+            .-add-chapter {
+                flex: 1;
+                color: var(--add-chapter);
             }
         }
     }

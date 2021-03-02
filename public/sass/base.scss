@@ -35,9 +35,10 @@ select {
     --box:   #232931;
     --tick: #e21a7a;
     --bg-tick: #21212196;
-    --add: rgba(255, 255, 0, 0.959);
-    --delete: rgba(211, 19, 19, 0.918);
-    --edit: rgba(46, 144, 255, 0.959);
+    --add-story: rgba(255, 255, 0, 0.959);
+    --add-chapter: rgb(20, 189, 25);
+    --delete: rgba(206, 1, 1, 0.918);
+    --edit: rgba(255, 102, 46, 0.959);
 }
 
 @keyframes flash {
