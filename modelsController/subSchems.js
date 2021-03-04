@@ -8,6 +8,7 @@ const story = new Schema({
     categories: [{ type: String, }],
     state: { type: String, enum: ['approve', 'not approve'], default: 'not approve' },
     chapterPresent: { type: Number, default: 0 },
+    coverImage: { type: String, default: '' },
     updateStory: { type: Date, default: new Date },
     listChapter: [{
         chapter: { type: Number, default: 0 }, 

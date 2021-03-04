@@ -14,7 +14,7 @@ module.exports = function(hbs) {
 
     hbs.registerHelper('showAvatar', function(avatar, gender) {
         if(avatar) { 
-            return avatar;
+            return '/' + avatar.split('\\').slice(2).join('/');
         }else {
             return gender === 'Nam' ? avatarDefault.male : avatarDefault.female;
         }

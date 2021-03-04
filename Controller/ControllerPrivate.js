@@ -3,6 +3,8 @@ const handleToken = require('../middleware/handleToken.js');
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
 const joi = require('joi');
+const formidable = require('formidable');
+const fs = require('fs/promises');
 
 class ControllerPrivate {
 
@@ -32,25 +34,36 @@ class ControllerPrivate {
     async updateAccountDetail(req, res, next) {
         const token = req.cookies.Authorization ? req.cookies.Authorization.split(' ')[1] : '';
         const payload = handleToken.getPayLoad(token);
-        if(req.file) {
-            req.body.avatar = '/' + req.file.path.split('/').slice(1).join('/');
+        const form = formidable({ 
+            multiples: true,
+            uploadDir: `${process.env.UPLOADS}\\avatars`
+        });
+        form.parse(req, async (err, fields, files) => {
+            if(files.avatar.size === 0) {
+                await fs.rm(files.avatar.path);
+            }else {
+                await fs.rename(files.avatar.path, `${form.uploadDir}\\${files.avatar.name}`);
+                await user.findOneAndUpdate({ _id: payload.id }, { 
+                    $set: {
+                        'infoAccount.avatar': `${form.uploadDir}\\${files.avatar.name}`,
+                        'infoAccount.lastModified': new Date,
+                    },
+                });
+            }
+            if (err) {
+                next(err);
+                return;
+            }
             await user.findOneAndUpdate({ _id: payload.id }, { 
                 $set: { 
-                    infoAccount: req.body,
+                    'infoAccount.firstName': fields.firstName,
+                    'infoAccount.lastName': fields.lastName,
+                    'infoAccount.age': fields.age,
+                    'infoAccount.gender': fields.gender,
                     'infoAccount.lastModified': new Date,
                 },
             });
-        }else {
-            await user.findOneAndUpdate({ _id: payload.id }, { 
-                $set: { 
-                    'infoAccount.firstName': req.body.firstName,
-                    'infoAccount.lastName': req.body.lastName,
-                    'infoAccount.age': req.body.age,
-                    'infoAccount.gender': req.body.gender,
-                    'infoAccount.lastModified': new Date,
-                },
-            });
-        }
+        });
         res.redirect('#');
     }
 
@@ -138,24 +151,32 @@ class ControllerPrivate {
     async createStory(req, res, next) {
         const token = req.cookies.Authorization ? req.cookies.Authorization.split(' ')[1] : '';
         const payload = handleToken.getPayLoad(token);
-        if(req.file) {
-            // req.body.avatar = '/' + req.file.path.split('\\').slice(1).join('/');
-            // await user.findOneAndUpdate({ _id: payload.id }, { 
-            //     $set: { 
-            //         infoAccount: req.body,
-            //         'infoAccount.lastModified': new Date,
-            //     },
-            // });
-        }else {
+        const form = formidable({ 
+            multiples: true,
+            uploadDir: `${process.env.UPLOADS}\\coverImage`
+        });
+        form.parse(req, async (err, fields, files) => {
+            // console.log({files, fields: JSON.parse(fields.addStory)})
+            const field = JSON.parse(fields.addStory);
+            if(files.coverImage.size === 0) {
+                await fs.rm(files.avatar.path);
+            }else {
+                await fs.rename(files.coverImage.path, `${form.uploadDir}\\${files.coverImage.name}`);
+            }
+            if (err) {
+                next(err);
+                return;
+            }
             await user.findOneAndUpdate({ _id: payload.id }, {
                 $push: {
-                    storys: req.body,
+                    storys: Object.assign(field, { coverImage: `${form.uploadDir}\\${files.coverImage.name}` }),
                 }
-            }).then(function() {
+            }).then(function(document) {
+                console.log(document)
                 res.json({ isSucess: true });
                 next();
             })
-        }
+        })
         // res.redirect('#');
     }
 

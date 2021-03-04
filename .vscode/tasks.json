@@ -1,0 +1,48 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"script": "install",
+			"problemMatcher": [],
+			"label": "npm: install",
+			"detail": "install dependencies from package",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		},
+		{
+			"type": "npm",
+			"script": "start",
+			"group": "rebuild",
+			"problemMatcher": [],
+			"label": "npm: start",
+			"detail": "nodemon --inspect ./app.js -e js, json"
+		},
+		{
+			"type": "npm",
+			"script": "watch",
+			"group": "build",
+			"problemMatcher": [],
+			"label": "npm: watch",
+			"detail": "node-sass -w public/sass -o public/css"
+		},
+		{
+			"type": "npm",
+			"script": "test",
+			"group": "test",
+			"problemMatcher": [],
+			"label": "npm: test",
+			"detail": "echo \"Error: no test specified\" && exit 1"
+		},
+		{
+			"type": "npm",
+			"script": "uploadcodes",
+			"group": "test",
+			"problemMatcher": [],
+			"label": "npm: uploadcodes",
+			"detail": "git add ."
+		}
+	]
+}
