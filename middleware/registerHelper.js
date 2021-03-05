@@ -27,8 +27,8 @@ module.exports = function(hbs) {
             return data.fullName;
         }
     });
-    hbs.registerHelper('getTick', function(registration, uploadStory, addStory) {
-        return registration | uploadStory | addStory ? 'tick' : '';
+    hbs.registerHelper('getTick', function(registration, uploadStory, addStory, editStory) {
+        return registration | uploadStory | addStory | editStory ? 'tick' : '';
     });
 
 }

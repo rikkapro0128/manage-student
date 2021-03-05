@@ -198,6 +198,22 @@ class ControllerPrivate {
         }
     }
 
+    async editStory(req, res, next) {
+        const token = req.cookies.Authorization ? req.cookies.Authorization.split(' ')[1] : '';
+        const payload = handleToken.getPayLoad(token);
+        await user.findOne({
+            _id: payload.id,
+        }).then(async function(data) {
+            let list = data.storys.map((element) => element.toObject());
+            let storys = list.filter((element) => parseInt(element._id) === parseInt(req.params.idStory))
+            res.render('profile', {
+                data,
+                story: storys[0],
+                editStory: true,
+            })
+        })
+    }
+
     async acceptMakeUser(req, res, next) {
         const token = req.cookies.Authorization ? req.cookies.Authorization.split(' ')[1] : '';
         const payload = handleToken.getPayLoad(token);
