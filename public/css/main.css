@@ -6,6 +6,7 @@
 @import url("./account-detail.css");
 @import url("./upload-story.css");
 @import url("./add-story.css");
+@import url("./edit-story.css");
 .box_header {
   width: 100%;
   position: fixed;
@@ -660,7 +661,7 @@
       box-sizing: border-box;
       border-radius: 5px; }
       .box_footer .footer_left .--box_fanpage .-logo {
-        background-image: url("https://scontent.fsgn3-1.fna.fbcdn.net/v/t1.0-1/cp0/p50x50/22528449_1856634004370937_5820400839758379699_n.jpg?_nc_cat=1&ccb=2&_nc_sid=dbb9e7&_nc_ohc=lj_jhEszdSwAX9gEoEm&_nc_oc=AQlpRiEY2Yk43SKxpqfjAa9e5bQv3S6RPUrZxE18Uvr56MvVbbjrCDCu21fF6d_iZdMUSNY4OGlYntfFiIDDakHD&_nc_ht=scontent.fsgn3-1.fna&tp=27&oh=8ddd2e4f01d1483b81fa37a83b24af83&oe=60351F03");
+        background-image: url("https://scontent.fvca1-1.fna.fbcdn.net/v/t1.0-1/cp0/p80x80/22528449_1856634004370937_5820400839758379699_n.jpg?_nc_cat=1&ccb=1-3&_nc_sid=dbb9e7&_nc_ohc=KUkiyiUF1WoAX8t6riJ&_nc_oc=AQlDVfEEv-mRe36RLzRrEAeHk02zSHzeHqzu2HiNSu7M0pPuCY97Arec-Pbgq36lY0k4w5LzZy68neXqng7ek8Bx&_nc_ht=scontent.fvca1-1.fna&tp=27&oh=9f817ef045cc6dd05cdee41341c2c954&oe=606C4C09");
         width: 50px;
         height: 50px;
         margin-right: 8px; }

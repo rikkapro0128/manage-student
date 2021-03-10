@@ -1,4 +1,5 @@
 import { getCookie, eraseCookie } from './handle-token.js';
+import { jwtDecode } from './jwt-decode.js';
 export function handleToken() {
   let showExpire = $('#show_time-expire');
   let manage = $('.header_top--item.manager');
@@ -68,7 +69,7 @@ export function handleToken() {
   const token = getCookie('Authorization');
   let session;
   if(token) {
-    const decode = jwt_decode(token);
+    const decode = jwtDecode(token);
     let timeStampExp = decode.exp*1000;
     showExpire.closest('.--item').fadeIn(200);
     manage.empty();
