@@ -1,4 +1,5 @@
 const user = require('../modelsController/account.js');
+const subSchems = require('../modelsController/subSchems.js');
 const handleToken = require('../middleware/handleToken.js');
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
@@ -9,8 +10,7 @@ const fs = require('fs/promises');
 class ControllerPrivate {
 
     async profile(req, res, next) {
-        const token = req.cookies.Authorization ? req.cookies.Authorization.split(' ')[1] : '';
-        const payload = handleToken.getPayLoad(token);
+        const payload = req.body.payload;
         if(payload) {
             const data = await user.findOne({ _id: payload.id });
             res.render('profile', {
@@ -20,8 +20,7 @@ class ControllerPrivate {
         }
     }
     async accountDetail(req, res, next) {
-        const token = req.cookies.Authorization ? req.cookies.Authorization.split(' ')[1] : '';
-        const payload = handleToken.getPayLoad(token);
+        const payload = req.body.payload;
         if(payload) {
             const data = await user.findOne({ _id: payload.id });
             res.render('profile', {
@@ -32,8 +31,7 @@ class ControllerPrivate {
     }
 
     async updateAccountDetail(req, res, next) {
-        const token = req.cookies.Authorization ? req.cookies.Authorization.split(' ')[1] : '';
-        const payload = handleToken.getPayLoad(token);
+        const payload = req.body.payload;
         const form = formidable({ 
             multiples: true,
             uploadDir: `${process.env.UPLOADS}\\avatars`
@@ -68,8 +66,7 @@ class ControllerPrivate {
     }
 
     async changePassword(req, res, next) {
-        const token = req.cookies.Authorization ? req.cookies.Authorization.split(' ')[1] : '';
-        const payload = handleToken.getPayLoad(token);
+        const payload = req.body.payload;
         if(payload) {
             const data = await user.findOne({ _id: payload.id });
             res.render('profile', {
@@ -91,8 +88,7 @@ class ControllerPrivate {
             confirmPassword: req.body.confirmPassword,
         }).then(async(data) => { // check value password is have in database
             if(!data) { throw new Error('User Name or Password Invalid!'); }
-            const token = req.cookies.Authorization ? req.cookies.Authorization.split(' ')[1] : '';
-            const payload = handleToken.getPayLoad(token);
+            const payload = req.body.payload;
             const account = await user.findOne({ _id: payload.id });
             await bcrypt.compare(data.oldPassword, account.hashPassword).then(async function(result) {
                 if(result) {
@@ -109,8 +105,7 @@ class ControllerPrivate {
     }
 
     async uploadStory(req, res, next) {
-        const token = req.cookies.Authorization ? req.cookies.Authorization.split(' ')[1] : '';
-        const payload = handleToken.getPayLoad(token);
+        const payload = req.body.payload;
         if(payload) {
             const data = await user.findOne({ _id: payload.id });
             if(data.infoAccount.typeUser === 'watcher') {
@@ -129,8 +124,7 @@ class ControllerPrivate {
     }
 
     async addStory(req, res, next) {
-        const token = req.cookies.Authorization ? req.cookies.Authorization.split(' ')[1] : '';
-        const payload = handleToken.getPayLoad(token);
+        const payload = req.body.payload;
         if(payload) {
             const data = await user.findOne({ _id: payload.id });
             if(data.infoAccount.typeUser === 'watcher') {
@@ -149,8 +143,7 @@ class ControllerPrivate {
     }
 
     async createStory(req, res, next) {
-        const token = req.cookies.Authorization ? req.cookies.Authorization.split(' ')[1] : '';
-        const payload = handleToken.getPayLoad(token);
+        const payload = req.body.payload;
         const form = formidable({ 
             multiples: true,
             uploadDir: `${process.env.UPLOADS}\\coverImage`
@@ -181,8 +174,7 @@ class ControllerPrivate {
     }
 
     async deleteStory(req, res, next) {
-        const token = req.cookies.Authorization ? req.cookies.Authorization.split(' ')[1] : '';
-        const payload = handleToken.getPayLoad(token);
+        const payload = req.body.payload;
         // console.log('Access router delete coures');
         // console.log(req.body.deleteStory)
         if(payload) {
@@ -199,24 +191,24 @@ class ControllerPrivate {
     }
 
     async editStory(req, res, next) {
-        const token = req.cookies.Authorization ? req.cookies.Authorization.split(' ')[1] : '';
-        const payload = handleToken.getPayLoad(token);
+        const payload = req.body.payload;
         await user.findOne({
             _id: payload.id,
-        }).then(async function(data) {
-            let list = data.storys.map((element) => element.toObject());
-            let storys = list.filter((element) => parseInt(element._id) === parseInt(req.params.idStory))
-            res.render('profile', {
-                data,
-                story: storys[0],
-                editStory: true,
+        }).then((profile) => {
+            user.storys.find({
+                storys: {
+                    $elemMatch: {
+                        _id: { $eq: req.params.idStory },
+                    }
+                }
+            }).then((value) => {
+                console.log(value);
             })
         })
     }
 
     async acceptMakeUser(req, res, next) {
-        const token = req.cookies.Authorization ? req.cookies.Authorization.split(' ')[1] : '';
-        const payload = handleToken.getPayLoad(token);
+        const payload = req.body.payload;
         if(payload) {
             await user.findOneAndUpdate({ _id: payload.id }, {
                 'infoAccount.typeUser': req.body.changeUser,

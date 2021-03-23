@@ -12,6 +12,9 @@ class checkToken {
         // check login
         const token = req.cookies.Authorization ? req.cookies.Authorization.split(' ')[1] : '';
         const state = handleToken.verifyToken(token);
+        if(state) {
+            req.body.payload = handleToken.getPayLoad(token);
+        }
         // if user never signin or signup, throw aleart
         return state ? next() : res.redirect('/404-not-found');
     }
