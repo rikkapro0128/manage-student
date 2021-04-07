@@ -191,18 +191,16 @@ class ControllerPrivate {
     }
 
     async editStory(req, res, next) {
-        const payload = req.body.payload;
-        await user.findOne({
-            _id: payload.id,
-        }).then((profile) => {
-            user.storys.find({
-                storys: {
-                    $elemMatch: {
-                        _id: { $eq: req.params.idStory },
-                    }
-                }
-            }).then((value) => {
-                console.log(value);
+        await user.findOne({ _id: req.body.payload.id })
+        .then((story) => {
+            return story;
+        })
+        .then(async (story) => {
+            let dataThisStory = (await story).storys.id(req.params.idStory);
+            res.render('profile', {
+                data: story,
+                story: dataThisStory.toObject(),
+                editStory: true,
             })
         })
     }
