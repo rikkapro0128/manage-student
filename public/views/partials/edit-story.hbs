@@ -1,16 +1,16 @@
 <div class="edit_story">
-    <form id="">
+    <form id="" action="/private/upload-story/update/{{ story._id }}?_method=PATCH" method="POST">
         <div class="form-group_user">
             <label for="" class="title">Tên truyện</label>
-            <input type="text" class="info" value="{{ story.nameStory }}">
+            <input type="text" class="info" name="nameStory" value="{{ story.nameStory }}">
         </div>
         <div class="form-group_user">
             <label for="" class="title">Tên tác giả</label>
-            <input type="text" class="info" value="{{ story.nameAuthor }}">
+            <input type="text" class="info" name="nameAuthor" value="{{ story.nameAuthor }}">
         </div>
         <div class="form-group_user">
             <label for="" class="title">Loại truyện</label>
-            <select class="type_story" name="typeStory" id="">
+            <select class="type_story" name="typeStory" id="{{ story._id }}">
                 <option value="storyCompose" {{gender 'storyCompose' story.typeStory}}>Truyện sáng tác</option>
                 <option value="storyTranslate" {{gender 'storyTranslate' story.typeStory}}>Truyện dịch</option>
             </select>
@@ -23,5 +23,6 @@
             <label for="" class="title">Ảnh bìa truyện</label>
             <img class="cover_image" src="{{ showAvatar story.coverImage }}" alt="avatar">
         </div>
+        <button class="btn">Cập Nhật</button>
     </form>
 </div>

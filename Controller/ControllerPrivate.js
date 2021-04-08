@@ -190,19 +190,34 @@ class ControllerPrivate {
         }
     }
 
-    async editStory(req, res, next) {
+    async editStoryById(req, res, next) {
         await user.findOne({ _id: req.body.payload.id })
         .then((story) => {
             return story;
         })
         .then(async (story) => {
             let dataThisStory = (await story).storys.id(req.params.idStory);
+            //console.log(dataThisStory.toObject())
             res.render('profile', {
                 data: story,
                 story: dataThisStory.toObject(),
                 editStory: true,
             })
         })
+    }
+
+    async updateStoryById(req, res, next) {
+        await user.findOneAndUpdate(
+            { _id: req.body.payload.id, 'storys._id': req.params.idStory },
+            {
+                $set: {
+                    'storys.$.nameStory': req.body.nameStory,
+                    'storys.$.nameAuthor': req.body.nameAuthor,
+                    'storys.$.typeStory': req.body.typeStory,
+                }
+            }
+        )
+        res.redirect('back');
     }
 
     async acceptMakeUser(req, res, next) {
